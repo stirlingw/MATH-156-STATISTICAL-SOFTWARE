@@ -1,0 +1,703 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 2: Review of Probability Theory}
+\author{MATH E-156: Mathematical Foundations of Statistical Software}
+\date{Due February 5, 2018}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\begin{document}
+
+	\maketitle
+
+
+
+
+
+\section*{Problem 1}
+
+
+
+\subsection*{Problem Statement}
+
+The random variable $X$ has this categorical distribution:
+$$
+\begin{tabular}{ccccc}
+& $k$ & & $\Pr(X = k)$\\
+\hline
+& 25 & & 0.10\\
+& 40 & & 0.25\\
+& 50 & & 0.20\\
+& 55 & & 0.30\\
+& 60 & & 0.15\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate $\hbox{E}[X]$, the expected value of $X$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate $\hbox{E}[X^2]$, the second moment of $X$.
+
+\bigskip
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of $X$.
+
+\bigskip
+\noindent
+The problem solution starts on the next page.
+
+
+\newpage
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate $\hbox{E}[X]$, the expected value of $X$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$
+\begin{tabular}{cccccc}
+& $k$ & & $\Pr(X = k)$ & & $X \cdot \Pr(X = k)$\\
+\hline
+& 25 & & 0.10 & & 2.50\\
+& 40 & & 0.25 & & 10\\
+& 50 & & 0.20 & & 10\\
+& 55 & & 0.30 & & 16.5\\
+& 60 & & 0.15 & & 9\\
+\hline
+& & & Total & & 48\\
+\end{tabular}
+$$
+
+Expected value of X is E[X] = 48
+
+\vspace{1in}
+\noindent
+{\bf Part (b)} Calculate $\hbox{E}[X^2]$, the second moment of $X$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$
+\begin{tabular}{cccccc}
+& $k^2$ & & $\Pr(X = k)$ & & $X \cdot \Pr(X = k)$\\
+\hline
+& 25 & & 0.10 & & 62.5\\
+& 40 & & 0.25 & & 400.0\\
+& 50 & & 0.20 & & 500.0\\
+& 55 & & 0.30 & & 907.5\\
+& 60 & & 0.15 & & 540.0\\
+\hline
+& & & Total & &  2,410.0\\
+\end{tabular}
+$$
+
+the second moment of $X$ = $E[X^2]$ is 2,410
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of $X$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$ Var[X] \ = \ E[X^2] \ - \ (E[X])^2 $$
+$$ = 2,410 \ - \ 48^2 $$
+$$ = 106 $$
+
+OR:
+
+$$
+\begin{tabular}{cccccccc}
+& $k$ & & $\Pr(X = k)$ & & $k \ - \ E[X]$ & & $(k \ - \ E[X])^2 \cdot Pr(X = k)$ \\
+\hline
+& 25 & & 0.10 & & -23.0 & &  52.9\\
+& 40 & & 0.25 & & -8.0 & & 16.0\\
+& 50 & & 0.20 & & 2.0 & & 0.8\\
+& 55 & & 0.30 & & 7.0 & &  14.7\\
+& 60 & & 0.15 & & 12.0 & & 21.6\\
+\hline
+& & & & & Total & &  106.0\\
+\end{tabular}
+$$
+
+Finally:
+
+Variance of X is Var[X] is 106.0.
+
+
+\newpage
+\section*{Problem 2}
+
+In this problem we will explore a new discrete probability distribution called the {\em geometric} distribution.
+
+\subsection*{Problem Statement}
+
+A discrete random variable $X$ has a {\em geometric} distribution with parameter $p$ if for all non-negative integer values of $k$ it has the probability mass function:
+$$
+\Pr(X = k) = p^k \cdot (1-p),\ \ \hbox{integer } k \geq 0
+$$
+Notice here that the support of $X$ is infinite, unlike the categorical distribution that we examined in lecture. However, our theory for discrete random variables works the exact same way for random variables with infinite support as for those with finite support..
+
+\bigskip
+\noindent
+{\bf Part (a)} Show that the probabilities defined by this mass function do indeed sum to one when summing over all non-negative integers.
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate $\hbox{E}[X]$, the expected value of a geometric random variable.
+
+\bigskip
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of a geometric random variable.
+
+\bigskip
+\noindent
+{\bf Hint} You might find these power series from elementary calculus to be useful:
+\begin{eqnarray*}
+\sum_{k=0}^\infty p^k & = & \frac{1}{1-p}\\
+\\
+\sum_{k=0}^\infty k p^k & = & \frac{p}{(1-p)^2}\\
+\\
+\sum_{k=0}^\infty k^2 p^k & = & \frac{p + p^2}{(1-p)^3}
+\end{eqnarray*}
+
+\newpage
+\subsection*{Problem Solution}
+
+
+\noindent
+{\bf Part (a)} Show that the probabilities defined by this mass function do indeed sum to one when summing over all non-negative integers.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+\Pr(X = k) & = & p^k \cdot (1-p),\ \ \hbox{integer } k \geq 0 \\
+\sum_{k=0}^\infty p^k \ \cdot \ (1-p) & = & (1-p) \ \cdot \ \sum_{k=0}^\infty p^k \\
+& = & (1-p) \ \cdot \ \bigg( \frac{1}{1-p} \bigg) \\
+& = & 1 \\
+\end{eqnarray*}
+
+Probabilities are likely to equal to 1
+
+\vspace{1.0in}
+\noindent
+{\bf Part (b)} Calculate $\hbox{E}[X]$, the expected value of a geometric random variable.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+E[X] & = &  \sum_{k\in\Omega x} \ k \ \cdot \ \Pr(X=k)\\
+& = & \sum_{k=0}^\infty \ \cdot \ p^k (1-p) \\
+& = & (1-p) \ \cdot \ \sum_{k=0}^\infty kp^k\\
+& = & (1-p) \ \cdot \ \frac{p}{(1-p)^2}\\
+& = & \frac{p}{(1-p)}
+\end{eqnarray*}
+
+E[X] of X is $\frac{p}{(1-p)}$
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of a geometric random variable.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+Get second moment of the expected value of X:
+
+\begin{eqnarray*}
+E[X^2] & = &  \sum_{k\in\Omega x} \ k^2 \ \cdot \ \Pr(X=k)\\
+& = & \sum_{k=0}^\infty \ k^2 \ \cdot \ p^k (1-p) \\
+& = & \frac{p+p^2}{(1-p)^3} \ \cdot \ (1-p) \\
+& = & \frac{p+p^2}{(1-p)^2}
+\end{eqnarray*}
+
+Calculate for variance:
+\begin{eqnarray*}
+Var[X] & = & E[X^2] - (E[X])^2 \\
+& = & \frac{p+p^2}{(1-p)^2} \ - \ \bigg( \frac{p}{1-p} \bigg)^2 \\
+& = & \frac{p}{(1-p)^2}\\
+\end{eqnarray*}
+
+The variance is $ \frac{p}{(1-p)^2} $
+
+\newpage
+\section*{Problem 3}
+
+
+\subsection*{Problem Statement}
+
+Let $X$ be an exponential random variable with parameter $\lambda$, so that
+$$
+f_X(x) = \lambda e^{-\lambda x}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Derive an algebraic expression for the $k$th moment of $X$, denoted $\hbox{E}[X^k]$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the formula from Part (a), $\hbox{E}[X]$, the expected value of $X$.
+
+
+\bigskip
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of $X$.
+
+
+\bigskip
+\noindent
+{\bf Part (d)} Show that $F_X(x)$, the cumulative probability function for $X$, is:
+$$
+F_X(x) = 1 - \exp( -\lambda x)
+$$
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Derive an algebraic expression for the $k$th moment of $X$, denoted $\hbox{E}[X^k]$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+\hbox{E}[X^k]  & = & \int_{\Omega x} x^k \ \cdot \ F_X(x) \ \cdot \ dx \\
+& = & \int_0^\infty x^k \ \cdot \ \lambda e^{-\lambda x} \ \cdot \ dx \\
+& = & \lambda \ \cdot \ \int_0 x^k e^{-\lambda x} \ \cdot \ dx \\
+\end{eqnarray*}
+
+Kinda Sorta Gamma Function:
+\begin{eqnarray*}
+\int_0 x^k e^{-\lambda x} \ \cdot \ dx & = & \frac{\Gamma(k+1)}{\lambda^{k+1} } \\
+\end{eqnarray*}
+
+Finally:
+\begin{eqnarray*}
+\lambda \ \cdot \ \int_0 x^k e^{-\lambda x} \ \cdot \ dx & = & \lambda \bigg( \frac{\Gamma(k+1)}{\lambda ^{k+1} } \bigg) \\
+& = & \frac{k!}{\lambda^k} \\
+\end{eqnarray*}
+
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+{\bf Part (b)} Using the formula from Part (a), $\hbox{E}[X]$, the expected value of $X$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+\hbox{E}[X^1] & = & \frac{1!}{\lambda^k} \\
+& = & \frac{1}{\lambda} \\
+\end{eqnarray*}
+
+\vspace{1in}
+\noindent
+{\bf Part (c)} Calculate $\hbox{Var}[X]$, the variance of $X$.
+\bigskip
+\noindent
+{\bf Solution}
+
+Get $\hbox{E}[X2]$ for $x=2$
+\begin{eqnarray*}
+\hbox{E}[X2] & = & \frac{2!}{\lambda^2} \\
+& = & \frac{2}{\lambda^2}
+\end{eqnarray*}
+
+Get variance:
+\begin{eqnarray*}
+\hbox{Var}[X] & = & \hbox{E}[X^2] \ - \ (\hbox{E}[X])^2 \\
+& = & \frac{2}{\lambda^2} \ - \ \bigg( \frac{1}{\lambda} \bigg)^2 \\
+& = & \frac{1}{\lambda^2}
+\end{eqnarray*}
+
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (d)} Show that $F_X(x)$, the cumulative probability function for $X$, is:
+$$
+F_X(x) = 1 - \exp( -\lambda x)
+$$
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+General moments and variance of 1-parameter Pareto
+
+\subsection*{Problem Statement}
+
+A random variable $X$ has the {\em 1-parameter Pareto} distribution with parameter $\alpha > 0$ and lower limit of support $\theta > 0$ if it has the density function
+$$
+f_X(x) = \frac{\alpha \theta^\alpha}{x^{\alpha + 1}},\ \ x > \theta
+$$
+I admit that it seems to weird to call something a ``1-parameter'' distribution when it seems to have two parameters, but the variable $\theta$ only serves to define the support of the random variable, so conventionally it is not considered to be a real parameter.
+
+\bigskip
+\noindent
+{\bf Part (a)} Show that the function $f_X(x)$ is a valid density function. Hint: be careful about the support.
+
+\bigskip
+\noindent
+{\bf Part (b)} Derive an expression for the $k$th moment $\hbox{E}[X^k]$. Do you need to place any restrictions on any values?
+
+\bigskip
+\noindent
+{\bf Part (c)} Derive $\hbox{Var}[X]$, the variance of $X$. Do we need to make any assumptions about the values of $\alpha$ or $\theta$?
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} Show that the function $f_X(x)$ is a valid density function.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+\int_{\Omega x} F_X(x) \ \cdot \ dx & = & \int_ \theta ^ \infty \frac{\alpha \theta^\alpha}{x^{\alpha + 1}} \ \cdot \ dx \\
+& = & - \frac{\theta^\alpha}{x^\alpha} \suchthat_\theta^\infty \\
+& = & - \Bigg( - \frac{\theta^\alpha}{\theta^\alpha} \Bigg) \\
+& = & 1
+\end{eqnarray*}
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\vspace{in}
+\noindent
+{\bf Part (b)} Derive an expression for the $k$th moment $\hbox{E}[X^k]$. Do you need to place any restrictions on any values?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+Set integral for kth moment:
+
+\begin{eqnarray*}
+\hbox{E}[X^k] & = & \int_{\Omega x} x^k \ \cdot \ F_X(x) \ \cdot \ dx \\
+& = & \int_ \theta ^ \infty x^k \ \cdot \ \frac{\alpha \theta^\alpha}{x^{\alpha+1}} \ \cdot \ dx \\
+& = & \int_ \theta ^ \infty \alpha \theta^\alpha x^{k-\alpha-1} \ \cdot \ dx \\
+\end{eqnarray*}
+
+Final integral:
+\begin{eqnarray*}
+\int_ \theta ^ \infty \alpha \theta^\alpha x^{k-\alpha-1} \ \cdot \ dx  & = & \frac{\alpha\theta^\alpha \ \cdot \ x^{k-\alpha}}{k-\alpha} \suchthat_\theta^\infty \\
+& = & 0 - \frac{\theta^\alpha \ \cdot \ \theta^{k-\alpha}}{k-\alpha} \\
+& = & \frac{\theta^k}{\alpha - k}
+\end{eqnarray*}
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\noindent
+{\bf Part (c)} Derive $\hbox{Var}[X]$, the variance of $X$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+\hbox{E}[X^1] & = & \frac{\theta^1}{\alpha - 1} \\
+& = & \frac{\theta}{\alpha - 1} \\
+\end{eqnarray*}
+
+Second Moment with k=2:
+
+\begin{eqnarray*}
+\hbox{E}[X^2] & = & \frac{\theta^2}{\alpha - 2} \\
+\end{eqnarray*}
+
+Finally we calculate the variance:
+\begin{eqnarray*}
+& = & \frac{\theta^2}{\alpha - 2} \ - \ \Bigg( \frac{\theta}{\alpha - 1} \Bigg)^2 \\
+& = & \frac{\theta^2(\alpha - 1)^2 - \theta^2(\alpha - 2)}{(\alpha - 2)(\alpha -1)^2} \\
+& = & \frac{\alpha^2 \theta^2 - 3\alpha\theta^2 + 2\theta^2}{(\alpha - 2)(\alpha -1)^2} \\
+& = & \frac{\theta^2(\alpha-1)(\alpha-2)}{(\alpha - 2)(\alpha -1)^2}\\
+& = & \frac{\theta^2}{\alpha - 1} \\
+\end{eqnarray*}
+
+The variance of X is $\frac{\theta^2}{\alpha - 1}$ if $ \alpha > 2 $
+
+\newpage
+\section*{Problem 5}
+
+For the next 3 problems, we will develop the properties of a probability distribution known as a {\em 2-parameter Pareto} distribution. First, we want to make sure that we have a valid probability density function.
+
+
+\subsection*{Problem Statement}
+
+Let $X$ be a continuous random variable with support on the non-negative real numbers. Suppose for some value of $c$ that $X$ has the density function:
+$$
+f_X(x) = \frac{c}{(x + \theta)^{\alpha + 1}}
+$$
+
+\bigskip
+\noindent
+{\bf Problem} Determine the value of $c$.
+
+\bigskip
+\noindent
+{\bf Hint} The value of $c$ has to be such that the density function integrates to 1.
+
+
+\subsection*{Problem Solution}
+
+Define the integral:
+
+\begin{eqnarray*}
+\int_{\Omega x} F_X(x) \ \cdot \ dx & = &  \int_0^\infty \ \frac{c}{(x+\theta)^{\alpha +1}} \ \cdot \ dx \\
+& = & c \ \cdot \ \int_0^\infty \ \frac{1}{(x+\theta)^{\alpha +1}} \ \cdot \ dx \\
+\end{eqnarray*}
+
+Using the integral above to solve the equation:
+
+\begin{eqnarray*}
+c \ \cdot \ \int_0^\infty \ \frac{1}{(x+\theta)^{\alpha +1}} \ \cdot \ dx & = &  1\\
+\end{eqnarray*}
+
+\newpage
+\subsubsection*{Problem 5, continued}
+
+Calculate the integral:
+\begin{eqnarray*}
+& = & \bigg( -\frac{1}{\alpha} \ \cdot \ 0 \bigg) \ - \ \Bigg( - \frac{1}{\alpha} \ \cdot \ \frac{1}{(0 + \theta)^\alpha}\Bigg)\\
+& = & \frac{1}{\theta^\alpha}
+\end{eqnarray*}
+
+So we end up with:
+\begin{eqnarray*}
+c = \alpha \ \cdot \ \theta^\alpha \\
+\end{eqnarray*}
+
+Full density function is:
+\begin{eqnarray*}
+f_x(x) & = & \frac{\alpha \ \cdot \ \theta^\alpha}{(x + 0)^{\alpha + 1}}
+\end{eqnarray*}
+
+\newpage
+\section*{Problem 6}
+
+Now that we have a valid density function for the 2-parameter Pareto distribution, let's derive its cumulative probability function.
+
+\subsection*{Problem Statement}
+
+Let $X$ be a 2-parameter Pareto distribution with parameters $\alpha$ and $\theta$, so that the density function for $X$ is:
+$$
+f_X(x) = \frac{\alpha \cdot \theta^\alpha}{(x + \theta)^{\alpha + 1}}
+$$
+
+\bigskip
+\noindent
+{\bf Problem} Derive an expression for $F_X(x) = \Pr(X \leq x)$, the cumulative probability function of $X$.
+
+\subsection*{Problem Solution}
+
+Defining the function:
+
+\begin{eqnarray*}
+f_X(x) & = & \int_0^x \frac{\alpha \ \cdot \ \theta^\alpha}{(s + \theta)^{\alpha + 1}} \ \cdot \ ds \\
+& = & - \frac{\theta^\alpha}{(s + \theta)^\alpha} \suchthat_0^x \\
+& = & 1 - \Bigg( \frac{\theta}{x + \theta} \Bigg)^\alpha \\
+\end{eqnarray*}
+
+\newpage
+\section*{Problem 7}
+
+
+\subsection*{Problem Statement}
+
+Let $X$ be a 2-parameter Pareto distribution, with $\alpha > 1$.
+
+\bigskip
+\noindent
+{\bf Problem} Using calculus, derive $\hbox{E}[X]$, the expected value of $X$.
+
+
+\subsection*{Problem Solution}
+
+Get the expected value evaluate the integral:
+\begin{eqnarray*}
+\hbox{E}[X] & = & \int_0^\infty \ x \ \cdot \ \frac{\alpha \ \cdot \ \theta^\alpha}{(x + 0)^{\alpha + 1}} \ \cdot \ dx\\
+\end{eqnarray*}
+
+Setting up variables:
+\begin{eqnarray*}
+s & = & x + \theta \\
+x & = & s - \theta \\
+dx & = & ds \\
+\end{eqnarray*}
+
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+When $x = 0$, then $s = 0$.  When $x = \infty$, then $s = \infty$.  Getting the substitution.
+\begin{eqnarray*}
+\hbox{E}[X] & = & \int_0^\infty \ x \ \cdot \ \frac{\alpha \ \cdot \ \theta^\alpha}{(x + 0)^{\alpha + 1}} \ \cdot \ dx\\
+& = & \alpha \ \cdot \ \theta^\alpha \int_0^\infty \frac{x}{(x + \theta)^{\alpha + 1}} \ \cdot \ dx\\
+& = & \alpha \ \cdot \ \theta^\alpha \int_\theta^\infty \frac{s - \theta}{s^{\alpha + 1}} \ \cdot \ ds\\
+& = & \alpha \ \cdot \ \theta^\alpha \int_\theta^\infty \frac{1}{s^{\alpha}} - \frac{\theta}{s^{\alpha + 1}} \ \cdot \ ds\\
+& = & \alpha \ \cdot \ \theta^\alpha \ \cdot \ \Bigg[ - \frac{1}{\alpha - 1} s^{-(\alpha - 1)} \Bigg+ \frac{\theta}{\alpha} s^{-\alpha} \Bigg]_\theta^\infty \\
+& = & \alpha \ \cdot \ \theta^\alpha \ \cdot \ \Bigg[ -0 + 0 - \Bigg( -\frac{1}{\alpha - 1} \theta^{-(\alpha - 1)} + \frac{\theta}{\alpha} \theta^{-\alpha} \Bigg) \Bigg] \\
+& = & \alpha \ \cdot \ \theta^\alpha \ \cdot \ \Bigg[ \frac{\theta^{-\alpha + 1}}{\alpha \ \cdot \ (\alpha - 1)} \Bigg]\\
+& = & \frac{\theta}{\alpha - 1} \\
+\end{eqnarray*}
+
+The expected value of 2-parameter Pareto distribution is $\frac{\theta}{\alpha - 1}$
+
+\newpage
+\section*{Problem 8}
+
+Sometimes we can use information about a quantile to calculate a parameter value.
+
+\subsection*{Problem Statement}
+
+\noindent
+{\bf Part (a)} Let $X$ be a random variable that has a 2-parameter Pareto distribution with known $alpha = 2$. Suppose the 43.75th percentile is 200. What is $\theta$?
+
+\bigskip
+\noindent
+{\bf Part (b)} Let $Y$ be a random variable with an exponential distribution, and suppose that the 63.21 percentile is 4. What is the probability that $X > 5$?
+
+\bigskip
+\noindent
+{\bf Part (c)} Let $W$ be a random variable with an exponential distribution with parameter $\lambda$. Let $m$ be the median of the distribution i.e. $m$ is the 50th percentile. Derive an algebraic expression for $\lambda$ in terms of $m$.
+
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Let $X$ be a random variable that has a 2-parameter Pareto distribution with known $alpha = 2$. Suppose the 43.75 percentile is 200. What is $\theta$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\begin{eqnarray*}
+f_x(200) & = & 43.75 \\
+\end{eqnarray*}
+
+If $x = 200$ and $F_X(x) = 0.4375$ then:
+
+\begin{eqnarray*}
+1 - \Bigg( \frac{\theta}{200 + \theta }\Bigg)^2 & = & 0.4375 \\
+\Bigg( \frac{\theta}{200 + \theta} \Bigg)^2 & = & 0.5625 \\
+\frac{\theta}{200 + \theta} & = & 0.75 \\
+\theta & = & 600
+\end{eqnarray*}
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} Let $Y$ be a random variable with an exponential distribution, and suppose that the 63.2121 percentile is 4. What is the probability that $X > 5$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+Getting the cumulative probability function for $\lambda$.  Also, using $x = 4$ and $F_X(4) = 0.632121$:
+
+\begin{eqnarray*}
+1 - \exp{(-4\lambda)} & = & 0.632121 \\
+\exp{(-4\lambda)} & = & 0.632121 \\
+4\lambda & = & - 1 \\
+\lambda & = & 0.25 \\
+\end{eqnarray*}
+
+Using the cumulative probability function:
+
+\begin{eqnarray*}
+\Pr(X > x) & = & S_x(x) \\
+& = & 1 - F_X(x) \\
+& = & 1 - (1 - \exp(-\lambda x)) \\
+& = & \exp(- \lambda x)
+\end{eqnarray*}
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+So:
+
+\begin{eqnarray*}
+\Pr(X > x) & = & S_x(x) \\
+\Pr(X > 5) & = & S_x(5) \\
+& = & \exp(-0.25 X 5) \\
+& = & 0.25850 \\
+\Pr(X > x) & = & 0.26850
+\end{eqnarray*}
+
+\vspace{2in}
+\noindent
+{\bf Part (c)} Let $W$ be a random variable with an exponential distribution with parameter $\lambda$. Let $m$ be the median of the distribution i.e. $m$ is the 50th percentile. Derive an algebraic expression for $\lambda$ in terms of $m$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$F_X(m) = 0.5$
+
+
+\begin{eqnarray*}
+1 - \exp(-\lambda m) & = & 0.5 \\
+\exp(-\lambda m) & = & 0.5 \\
+- \lambda = ln(0.5) & = & -ln 2 \\
+\lambda & = & \frac{ln 2}{m} \\
+\frac{1}{\hbox{E}[X]} & = &  \frac{ln 2}{m} \\
+m & = & ln 2 \ \cdot \ \hbox{E}[X] \\
+\end{eqnarray*}
+
+
+
+
+\end{document}

@@ -1,0 +1,92 @@
+---
+title: 'Lecture 01: Introduction'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+#Lecture 01 Figures
+
+##Figure 1: Gamma function integrand for $x = 1/2$
+
+
+```{r}
+curve( x^(-1/2) * exp( -x ), 0, 3, main = "Gamma function integrand, x = 1/2",
+       lwd = 2, col = "red", ylab = "f(t)", xlab = "t")
+```
+
+
+
+###Figure 2: Gamma function integrand for $x = 1$
+
+```{r}
+curve( exp( -x ), 0, 3, main = "Gamma function integrand, x = 1",
+       lwd = 2, col = "blue", ylab = "f(t)", xlab = "t")
+```
+
+
+
+###Figure 3: Gamma function integrand for $x > 1$
+
+```{r}
+curve( x^3 * exp( -x ), 0, 6, lwd = 2, col = "red", xlab = "t", 
+       ylab = "f(t)", main = "Gamma function integrands, x > 1" )
+curve( x^2 * exp( -x ), 0, 6, lwd = 2, col = "blue", add = TRUE )
+curve( x * exp( -x ), lwd = 2, 0, 6, add = TRUE )
+legend( "topleft", inset = 0.01, legend <- c("x = 2", "x = 3", "x = 4"),
+        lwd = 2, lty = 1,
+        col = c( "black", "blue", "red")) 
+
+```
+
+
+#Gamma Functions
+
+Let's calculate some values of the gamma function.
+
+Here's $\Gamma(1)$:
+```{r}
+gamma(1)
+```
+
+How about $\Gamma(3)$:
+```{r}
+gamma(2)
+```
+
+And this is $\Gamma(6)$:
+```{r}
+gamma(6)
+```
+
+
+
+Let's do a non-integer:
+```{r}
+gamma(3.7)
+```
+
+Finally, note that we get the same answer using the fundamental recurrence relation:
+```{r}
+2.7 * 1.7 * gamma(1.7)
+```
+
+
+
+

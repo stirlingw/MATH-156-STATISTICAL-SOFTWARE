@@ -1,0 +1,387 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 1}
+\author{ Mathematical Foundations of Statistical Software}
+\author{MATH E-156: Stirling Waite}
+\date{Due January 29, 2018}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\begin{document}
+
+	\maketitle
+
+
+
+
+
+\section*{Problem 1}
+
+Let's start out by doing some simple numerical calculations.
+
+\subsection*{Problem Statement}
+
+\noindent
+{\bf Part (a)}\ What is the value of $\Gamma(9)$?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the value of $\Gamma(5.5)$?
+
+\bigskip
+\noindent
+{\bf Part (c)}\ What is the value of $\displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}$?
+
+\bigskip
+\noindent
+{\bf Part (d)}\ Obtain an expression in terms of a gamma function divided by a constant for the integral
+$$
+\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt
+$$
+Once you've expressed this in terms of a gamma function divided by a constant, use software (e.g.\ Excel or R) to obtain the numerical value. (Hint: read the section on ``kinda sorta'' gamma functions.)
+
+\newpage
+\subsection*{Problem Solution}
+
+
+\noindent
+{\bf Part (a)}\ What is the value of $\Gamma(9)$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$
+\Gamma(X) = \int_0^\infty t^{x-1} \ e^{-t} \cdot dt
+$$
+$$
+\Gamma(9) = 8!
+$$
+$$
+= 8X7X6X5X4X3X2X1
+$$
+$$ = 40320 $$
+
+\vspace{1in}
+\noindent
+{\bf Part (b)}\ What is the value of $\Gamma(5.5)$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$ \Gamma(5.5) = \int_0^\infty t^{4.5} \ e^{-t} \cdot dt $$
+$$ = 4.5 X \int_0^\infty t^{3.5} \ e^{-t} \cdot dt $$
+$$ = 4.5 X 3.5 X \int_0^\infty t^{2.5} \ e^{-t} \cdot dt $$
+$$ = 4.5 X 3.5 X 2.5 X \int_0^\infty t^{1.5} \ e^{-t} \cdot dt $$
+$$ = 4.5 X 3.5 X 2.5 X 1.5 \int_0^\infty t^{0.5} \ e^{-t} \cdot dt $$
+$$ = 4.5 X 3.5 X 2.5 X 1.5 X 0.5 X \sqrt{\pi} $$
+
+$$ \Gamma(5.5) = 52.34278$$
+
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+\noindent
+{\bf Part (c)}\ What is the value of $\displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}$?
+
+\bigskip
+\noindent
+{\bf Solution}
+$$= \displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}$$
+
+$$= \frac{6.1! \cdot 7!}{4! \cdot 9.1!} $$
+
+$$= \frac{6.1! \cdot 7!}{4! \cdot 9.1!} $$
+
+$$= 0.4127 $$
+
+\vspace{0.5in}
+\noindent
+{\bf Part (d)}\ Obtain an expression in terms of a gamma function divided by a constant for the integral
+$$
+\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt
+$$
+Once you've expressed this in terms of a gamma function divided by a constant, use software (e.g.\ Excel or R) to obtain the numerical value. (Hint: read the section on ``kinda sorta'' gamma functions.)
+
+$$ \int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt $$
+$$ s = 2.7t $$
+$$ t = \frac{s}{2.7} $$
+$$ dt = \frac{ds}{2.7} $$
+$$ \int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt = (\frac{s}{2.7})^{3.6} e^{-s} \frac{ds}{2.7}$$
+$$ = \frac{1}{2.7^{4.6}} \int_0^\infty s^{3.6} e^{-s} \cdot ds $$
+$$ = \frac{\Gamma(4.6)}{2.7^{4.6}} $$
+$$ = 0.1387473 $$
+
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+Using the recurrence relation, we can actually define the gamma function for negative numbers, as long as they are not integers (i.e.\ whole numbers). Calculate the value of $\Gamma(-5/2)$.
+
+
+\subsection*{Problem Solution}
+
+$$ \Gamma(-2.5) = \int_0^\infty t^{-1.5} e^{-t} \cdot dt$$
+$$ = -1.5 \cdot \int_0^\infty t^{-0.5} e^{-t} \cdot dt $$
+$$ = -1.5 \cdot -0.5 \cdot \sqrt{\pi}$$
+$$ = -0.9453087 $$
+
+\newpage
+\section*{Problem 3}
+
+\subsection*{Problem Statement}
+
+{\bf Part (a)}\ The binomial coefficient is defined for non-negative integers $r$ and $k$ with $r \geq k$ as
+$$
+{r \choose k} = \frac{r!}{k! \cdot (r - k)!}
+$$
+Use the gamma function to define a generalized form of the binomial coefficient, where $r$ is still non-negative but is not necessarily an integer. Your generalized form should return the same answer as before when $r$ is an integer. Note that $k$ is still restricted to integer values.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the value of
+$
+\displaystyle { 8.5 \choose 4}
+$?
+
+
+\subsection*{Problem Solution}
+
+
+{\bf Part (a)}\ The binomial coefficient is defined for non-negative integers $r$ and $k$ with $r \geq k$ as
+$$
+{r \choose k} = \frac{r!}{k! \cdot (r - k)!}
+$$
+Use the gamma function to define a generalized form of the binomial coefficient, where $r$ is still non-negative but is not necessarily an integer. Your generalized form should return the same answer as before when $r$ is an integer. Note that $k$ is still restricted to integer values.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+$$ {r \choose k} = \frac{r!}{k! \cdot (r - k)!} $$
+$$ = \frac{\Gamma (r+1)}{k! \cdot \Gamma (r - k + 1)} $$
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\vspace{0.5in}
+\noindent
+{\bf Part (b)}\ What is the value of
+$
+\displaystyle { 8.5 \choose 4}
+$?
+
+$$ = { 8.5 \choose 4} $$
+$$ = \frac{8.5!}{4! \cdot (8.5 - 4)!}$$
+$$ = \frac{8.5!}{4! \cdot 4.5!} $$
+$$ = \frac{119292.5 }{ 1256.227 } $$
+$$ = 94.96094 $$
+
+
+
+\newpage
+\section*{Problem 4}
+
+\subsection*{Problem Statement}
+
+Calculate the value of $\Gamma(4)$ directly from the definition i.e.\ evaluate the integral
+$$
+\Gamma(4)\ =\ \int_0^\infty t^3\ e^{-t} \cdot dt
+$$
+You'll have to use integration by parts for this. You can use the fact that
+$$
+\int_0^\infty t^2 e^{-t} \cdot dt = 2
+$$
+With this fact, you'll only need to do one integration by parts.
+
+
+\subsection*{Problem Solution}
+
+$$ \Gamma (4) = \int_0^\infty t^3 e^{-t} \cdot dt $$
+$$ = 3 \cdot \int_0^\infty t^2 e^{-t} \cdot dt $$
+$$ = 3 \cdot 2 $$
+$$ = 6 $$
+
+
+\newpage
+\section*{Problem 5}
+
+\subsection*{Problem Statement}
+
+Evaluate the integral
+$$
+\int_0^\infty t^5\ e^{-3t} \cdot dt
+$$
+This is a ``kinda sorta'' gamma function, discussed in Section 2.6 of Lecture 1. For this problem, don't use the formula in Section 2.6, but actually make a substitution and evaluate the integral. You can use the example in Section 2.6 as a template.
+
+
+
+\subsection*{Problem Solution}
+
+$$ \int_0^\infty t^5\ e^{-3t} \cdot dt $$
+$$ s = 3t $$
+$$ t = \frac{s}{3} $$
+$$ dt = \frac{ds}{3} $$
+$$ \int_0^\infty t^5\ e^{-3t} \cdot dt =  \int_0^\infty (\frac{s}{3})^5 \ e^{-s} \ \cdot (\frac{ds}{3}) $$
+$$ = \frac{1}{3^6} \ X \ \int_0^\infty s^5  \ e^{-s} \ \cdot ds $$
+$$ = \frac{\Gamma (6)}{3^6} $$
+$$ = 0.1646091 $$
+
+
+
+\newpage
+\section*{Problem 6}
+
+\subsection*{Problem Statement}
+
+Derive the  algebraic expression for the ``kinda sorta'' gamma function:
+$$
+\int_0^\infty t^x e^{-qt} \cdot dt = \frac{\Gamma(x+1)}{q^{x+1}},\ \ q > 0
+$$
+
+
+
+\subsection*{Problem Solution}
+
+$$ = \int_0^\infty \ t^x \ e^{-qt} \ \cdot \ dt $$
+$$ s = qt $$
+$$ t = \frac{s}{x} $$
+$$ dt = \frac{ds}{x} $$
+$$ = \int_0^\infty \ t^x \ e^{-qt} \ \cdot \ dt = \int_0^\infty (\frac{s}{x})^x \ e^{-s} \ \cdot \ \frac{ds}{x} $$
+$$ = \int_0^\infty \ \frac{s^x}{q^{x+1}} \ e^{-s} \ \cdot \ dt $$
+$$ = \frac{s^x}{q^{x+1}} \ \int_0^\infty \ s^{(x+1) - 1} \ e^{-s} \ \cdot \ ds $$
+$$ = \frac{\Gamma(x+1)}{q^{x+1}} $$
+
+\newpage
+\section*{Problem 7}
+
+\subsection*{Problem Statement}
+
+Evaluate the integral
+$$
+\int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx
+$$
+To do this, you should first note that the integrand here is symmetric about $0$, so we have:
+$$
+\int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx = 2 \cdot \int_0^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx
+$$
+Similarly, the Gaussian integral has the same symmetry property:
+$$
+\int_{-\infty}^\infty \exp \left \{ - x^2 \right \} \cdot dx = 2 \cdot \int_0^\infty \exp \left \{ - x^2 \right \} \cdot dx
+$$
+By making a clever substitution, you should be able to convert our original integral into a problem involving a Gaussian integral, and then you can evaluate this using the result from lecture.
+
+\bigskip
+\noindent
+{\bf WARNING!!} DO NOT attempt to solve this by constructing a double integral and converting to polar coordinates.
+
+
+\subsection*{Problem Solution}
+
+$$ s^2 = \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2} $$
+$$ s = \frac{x}{\sqrt{2\sigma}}$$
+$$ x = \sqrt{2 \sigma s} $$
+$$ dx = \sqrt{2 \sigma ds}$$
+
+Upper End:
+
+$$ \underset{x \to \infty}{\lim s} = \underset{x \to \infty}{\lim} \ \frac{x}{\sqrt{2\sigma}}$$
+$$ = \infty $$
+
+Lower End:
+
+When x is 0, then S is also 0.
+
+$$ \int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx  = \int_0^\infty \exp \{ -s^2 \} \ \cdot \ \sqrt{2 \sigma ds} $$
+$$ = \sqrt{2 \sigma} \ \cdot \ \int_0^\infty \ \exp \{ -s^2 \} \ \cdot \ ds $$
+$$ = \sqrt{2 \sigma} \ X \ ( \frac{1}{2} \int_\infty^\infty \exp \{ -s^2 \} \cdot ds ) $$
+$$ = \frac{\sqrt{2\pi\sigma}}{2} $$
+
+
+Original Integral:
+
+$$ \int_{-\infty}^{+\infty} \exp \{ - \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2} \} \ \cdot \ dx
+\ = \
+2 \ \cdot \ \int_0^\infty \ \exp \{ - \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2} \} \ \cdot \ dx
+$$
+$$ = 2 \ \cdot \ \frac{\sqrt{2\pi\sigma}}{2} $$
+$$ = \sqrt{2\pi\sigma} $$
+
+\newpage
+\section*{Problem 8}
+
+\subsection*{Problem Statement}
+
+In lecture, we saw the Gaussian integral:
+$$
+\int_{-\infty}^\infty e^{-s^2} \cdot ds = \sqrt{\pi}
+$$
+Use this to derive the result
+$$
+\Gamma \left ( \frac{1}{2} \right ) = \sqrt{\pi}
+$$
+Hint: the integral goes from $-\infty$ to $+\infty$, but the Gamma function is defined by an integral from $0$ to $+\infty$. So the first step is to obtain a new integral that has the appropriate range of integration. You actually can do this with a conceptual argument; no algebra manipulation required. Then it's just a matter of doing the right substitution to put the integral into the form of a gamma function.
+
+
+\subsection*{Problem Solution}
+
+$$ \int_{-\infty}^\infty e^{-s^2} \cdot ds = \sqrt{\pi} $$
+$$ f(s) = e^{-s^2} $$
+$$ \int_{0}^{+\infty}  e^{-s^2} \cdot ds = \frac{1}{2} \int_{-\infty}^{+\infty} e^{-s^2} \cdot ds$$
+$$ = \frac{\sqrt{\pi}}{2} $$
+
+If $f(-s) = f(s)$ for all $s$, then $f(s)$ is an even function.
+
+$$ \int_{0}^{+a} f(s) \ \cdot \ ds = \frac{1}{2} \int_{-a}^{+a} f(s) \ \cdot \ ds $$
+
+For second problem we have the result:
+
+$$ \int_{0}^{+\infty} f(s) \ e^{-s^2} \ \cdot \ ds = \frac{\sqrt{\pi}}{2} $$
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+Making the substitution for $t = s^2$:
+
+$$ t = s^2 $$
+$$ s = t^{\frac{1}{2}} $$
+$$ ds = \frac{1}{2} t^{-\frac{1}{2}} \ \cdot \ dt $$
+
+When $s = 0$, then $t = 0$.  When $s = \infty$, then  $t = \infty$.  The limits of integration don't change.
+
+So:
+$$ \int_{0}^{\infty}  e^{-s^2} \cdot ds = \int_{0}^{\infty} e^{-t} \ \cdot \ \frac{1}{2} \ t^{-\frac{1}{2}} \ \cdot \ dt $$
+$$ = \frac{1}{2} \ \int_{0}^{+\infty} \ t^{-\frac{1}{2}} \ e^{-t} \ \cdot \ dt $$
+$$ = \frac{1}{2} \ \Gamma \ (\frac{1}{2}) $$
+
+Remember before:
+
+$$ \int_{0}^{\infty}  e^{-s^2} \cdot ds  =  \frac{\sqrt{\pi}}{2} $$
+
+So now we can say:
+
+$$ \frac{1}{2} \ \Gamma \ (\frac{1}{2}) =  \frac{\sqrt{\pi}}{2} $$
+
+Finally:
+
+$$ \Gamma \ (\frac{1}{2}) = \sqrt{\pi}$$
+
+
+
+
+
+\end{document}
