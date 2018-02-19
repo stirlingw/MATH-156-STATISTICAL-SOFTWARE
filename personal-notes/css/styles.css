@@ -1,0 +1,202 @@
+/*
+Your stylesheets must use:
+1. At least one SCSS variable
+2. At least one example of SCSS nesting
+3. at least one use of SCSS inheritance.
+ */
+body,
+html {
+  height: 100%;
+}
+
+/*
+ * Font
+ */
+@font-face {
+  font-family: "mr-robot";
+  src: url("../fonts/mr-robot.ttf");
+}
+/*
+ * Nav
+ */
+.navbar-dark .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  padding: .5rem 1rem;
+  color: rgba(26, 26, 26, 0.5);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(26, 26, 26, 0.5);
+}
+
+/*
+ * About & Glossary
+ */
+#about, #glossary {
+  padding-top: 0px;
+  padding-bottom: 300px;
+  padding-left: 300px;
+  padding-right: 50px;
+}
+
+/*
+ * Main Nav
+ */
+#mainNav {
+  background: #cccccc;
+  /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
+}
+
+/* https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/css/clean-blog.css */
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    border-bottom: 1px solid transparent;
+    /* background: transparent; */
+  }
+
+  #mainNav .navbar-brand {
+    padding: 10px 20px;
+    color: rgba(26, 26, 26, 0.5);
+  }
+
+  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #mainNav .navbar-nav > li.nav-item > a {
+    padding: 10px 20px;
+    color: rgba(26, 26, 26, 0.5);
+  }
+
+  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+/*
+ * Index / Main Header
+ */
+header {
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header.masthead {
+  text-align: center;
+  color: #fff;
+  background-image: url(../img/main-bg.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header.masthead .intro-text {
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+
+header.masthead .intro-text .intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header.masthead .intro-text .intro-heading {
+  font-size: 50px;
+  /* font-weight: 700; */
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: "mr-robot";
+}
+
+header.masthead .intro-text .intro-heading span {
+  background: #cccccc;
+  /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
+  color: black;
+}
+
+/*
+ * Blog posts
+ */
+#blogger {
+  padding-top: 70px;
+}
+
+.blog-post {
+  margin-bottom: 4rem;
+}
+
+.blog-post-title {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
+}
+
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #999;
+}
+
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+/*
+ * Blog name and description
+ */
+.blog-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.blog-description {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+@media (min-width: 40em) {
+  .blog-title {
+    font-size: 3.5rem;
+  }
+}
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+
+.blog-pagination > .btn {
+  border-radius: 2rem;
+}
+
+.sidenav {
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+}

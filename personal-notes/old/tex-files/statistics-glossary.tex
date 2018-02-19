@@ -1,0 +1,709 @@
+\documentclass[solution, letterpaper]{cs20}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes, backgrounds, calc}
+\usetkzobj{all}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true
+}
+
+\begin{document}
+    <a href="#Principles">
+	\pagebreak
+
+	\section{Definitions}
+	\begin{description}
+		\item[Set:] Collection of objects that is determined by its members.
+		\item[Finite Set:] A set that has a count to it
+		\item[Cardinality (size of a set):] Number of elements in a set (aka length)
+		\item[function:] is an association of elements of one set with elements of another set
+		\item[Domain of a function:] Set of "input" or argument values for which the domain is defined
+		\item[Function:] output of a function
+		\item[Distinct:] two things are called distinct if they are not equal
+		\item[Proposition:] is a statement that is either true or false.
+		\item[Predicate:] A proposition whose truth depends on the value of one or more variables
+		\item[Injective:] One to one function that preserves distinctiveness
+		\item[Proof:] a method of establishing truth
+		\item [Axiom:] a statement or proposition on which an abstractly defined structure is based.
+		\item[Mathematical Proof of a proposition:] is a chain of logical deduction leading to the proposition from a base set of axioms.
+		\item[Theorems: ] Important true propositions
+		\item[Lemma: ] is a preliminary proposition useful for proving later propositions.
+		\item[Corollary: ] is a proposition that follows in just a few logical steps from a theorm.
+		\item[Prime: ] is an integer greater than 1 that is not divisible by any other integer greater than 1
+	\end{description}
+
+	\subsection{Mathematical Symbols}
+	\begin{description}
+		\item[ $::=$ :] Equal by definition
+		\item[ $\forall$ :] For all
+		\item[ $\forall$ :]
+		\item[ $\forall$ :]
+
+	\end{description}
+
+
+	\section{Pigeonhole Principle}
+    <div id="Principles"\>
+	\subsection{Principles}
+	\begin{description}
+	    \item[Pigeonhole Principle :] If there are more pigeons than holes they occupy, then at least two pigeons must be in the same hole.
+
+	    \item[Generalized Pigeonhole Principle :] If $|A| > k * |B|$, then every total function $ f : A \implies B$ maps at least $k + 1$ different elements of A to the same element of B.
+
+	\end{description}
+	\subsection{Example Pigeonhole Principle Problems}
+	\problem{}{}
+        Let $A$ be the set of your pigeons, and let $B$ be the set of pigeonholes in which they live. The \textit{Generalized Pigeonhole Principle} states that for a natural number $k$, if $|A| > k|B|$, then there exists a pigeonhole in which more than $k$ pigeons live. Prove the Generalized Pigeonhole Principle by contradiction.
+    \begin{solution}
+        Proof. We use proof by contradiction. Let $k$ in $\left\vert{A}\right\vert > k\left\vert{B}\right\vert$ be a $\mathbb{N}$.  Assume that some function (one-to-one) $f$ from $A$ to $B$ exists, and that all $B$ elements contain less than or equal to $A$ elements.  Then for every distinct element of $\left\vert{A}\right\vert$  there must map less than or equal to a distinct element of $k\left\vert{A}\right\vert$.  This is a contradiction.  Therefore, $\left\vert{A}\right\vert > k\left\vert{B}\right\vert$ must be false.
+    \end{solution}
+
+    \problem{}{}
+        Prove that if you pick 5 distinct integers from {1, . . . , 100}, some two differ by at most 24.
+    \begin{solution}
+        Divide the integers {1,...,100} into the 4 sets of integers {1,...,25}, {26,...,50}, {51,...,75}, and {76, . . . , 100}. Let each of this four sets be a pigeonhole. We are picking 5 integers from {1,...,100}. Let each of these five integers be a pigeon. By the pigeonhole principle there must be two integers in the same set.
+        Since the smallest and largest integers in each set differ by only 24, the 2 integers from the same set can differ by at most 24, and so there must be some 2 of our 5 integers that differ by at most 24.
+    \end{solution}
+
+    \section{Proofs}
+    \subsection{Summary}
+    \begin{description}
+        \item [Axiom:] a statement or proposition on which an abstractly defined structure is based.
+	    \item [Mathematical Proof of a Proposition:] is a chain of logical deduction leading to the proposition from a base set of axioms.
+	\end{description}
+
+	\subsection{Types of Proofs}
+	    \begin{description}
+            \item [Proposition: ] A \underline{proposition} is any declarative sentence that is either true or false.
+            \item [Contrapositive: ] The \underline{contrapositive} of an implication is logically equivalent to the original implication
+            \begin{enumerate}
+            \item to prove “$P \implies Q$”, prove “$\neg Q \implies \neg P$.”
+            \item The \underline{converse} of “If $P \implies Q$” is “if $Q \implies P$”
+            \end{enumerate}
+            \item [If and only if: ] to prove that $P \iff Q$, prove $P \implies Q \land Q \implies P$.
+            \item [Contradiction: ] to prove that $P$ is true, assume that $P$ is false and show that the assumption leads to a contradiction.
+            \item [Alternative: ] to prove that $P \iff Q$, prove $P \implies Q$ and $\neg P \implies \neg Q$.
+        \end{description}
+
+	\subsection{Proof Gotchas/Mistakes!}
+    	\begin{enumerate}
+            \item Canceling a factor that might be zero from both sides of an equation (“division by zero”).
+            \item Multiplying both sides of an inequality by a number that might be negative.
+            \item Assuming that $(a2 = b2) \implies (a = b)$.
+            \\ Correct is $(a2 = b2) \implies (|a| = |b|)$.
+            \item Ignoring a special case; e.g. proving $P(n)$ by considering only $n > 0$ and $n < 0$.
+        \end{enumerate}
+
+	\subsection{Example Problems}
+
+	    \problem{}{}
+
+        Each of the following claims and corresponding proofs is incorrect. Explain why each proof is incorrect.
+
+        \subproblem Claim: $1c = \$1$   \[ 1c = \$0.01= (\$ 0.1)^2 = (10c)^2 = 100c =\$1 \]
+
+        \subproblem Claim: If $a=b$ then $a=0$\\ \[a=b\]\[a^2=ab\]\[a^2-b^2=ab-b^2\]\[(a-b)(a+b)=(a-b)b\]\[a+b=b\]\[a=0\]
+
+        \begin{solution}
+          \subsolution $(10c)^2 = 100c$ is not true. The correct equality is $(10c)^2 = 100c^2$.
+          \\
+          \subsolution You cannot divide $(a-b)(a+b) = (a-b)b$ by $(a-b)$ since $(a-b)$ might be 0.
+        \end{solution}
+
+        \problem{}{}
+        Prove that in any group of six people, at least two of them know the same number of people. Note that you don’t know yourself, and that if A knows B then B knows A (thus “knows” is a symmetric relation).
+
+        \begin{solution}
+        There are 6 possible numbers of people a person can know (0 through 5 since you cannot know yourself ).
+        Suppose that each person knows a different number of people. Then someone (person A) knows 0 people and someone (person B) else knows 5 people. Since B knows 5 people and cannot know him or herself, then B knows A. Since knowing is a symmetric relation, A knows B. This is a contradiction because A knows 0 people.
+        Since we have arrived at a contradiction, we can conclude that in any group of six people, at least two of them know the same number of people.
+        \end{solution}
+
+        \problem{}{}
+
+        What is wrong with this proof that all cars are the same color?\\
+
+        Let $P(n)$ = ``every group of $n$ cars contains only cars of the same color.''\\
+        Base case $P(1)$: There is only one car in the group, thus clearly all cars in the group have the same color. \\
+        Inductive step: Assume $P(n)$ is true. We will show that it follows that $P(n+1)$ is true. \\
+        Consider a group of $n+1$ cars. The first $n$ cars must have the same color by the inductive assumption, and likewise the last $n$ cars must also have the same color by the inductive assumption. Because the two groups overlap in the middle, the cars in the first group must have the same color as the cars in the seconds group. Therefore, all $n+1$ cars must have the same color. Thus we have shown that $P(n+1)$ is true, and our proof is complete.
+
+        \begin{solution}
+
+        The proof hinges on the observation that ``the two groups overlap in the middle''; however, this is not the case when $n = 2$.
+
+        \end{solution}
+
+        \problem{}{}
+
+        Prove by induction that the decimal representation of every power of $3$ ends in one of the digits 1, 3 ,7, or 9.
+
+        \begin{solution}
+
+        Let $P(n)$ be $3^n$ ends in 1, 3, 7, or 9. We will prove by induction that $P(n)$ is true for $n\geq0$.
+
+        \textit{Base case, P(0):} $3^0 = 1$, which ends in 1. Therefore, $P(0)$ is true.
+
+        \textit{Inductive step:} Assume $P(n)$ (that $3^n$ ends in 1, 3, 7, or 9). We will show that $P(n+1)$ (that $3^{n+1}$ ends in 1, 3, 7, or 9) follows.
+
+        Consider $3^{n+1} = 3^n (3)$
+
+        By the inductive hypothesis, $3^n$ must end in 1, 3, 7, or 9. As a result, there are 4 possible cases:
+
+        \begin{enumerate}
+
+        \item The last digit of $3^n$ is 1. Since 1*3 = 3, the last digit of $3^{n+1}$ is 3. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 3. Since 3*3 = 9, the last digit of $3^{n+1}$ is 9. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 7. Since 7*3 = 21, the last digit of $3^{n+1}$ is 1. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 9. Since 9*3 = 27, the last digit of $3^{n+1}$ is 7. $P(n+1)$ holds true.
+
+        \end{enumerate}
+
+        We can therefore conclude that $P(n+1)$ follows from $P(n)$. Since $P(0)$ is true and $P(n+1)$ follows from $P(n)$, we can conclude that $P(n)$ holds true for $n \geq 0$ and every power of $3$ ends in one of the digits 1, 3 ,7, or 9.
+
+        \end{solution}
+
+	\section{Ordinal Induction}
+	\subsection{Summary}
+	    \begin{enumerate}
+        \item Let $P(x)$ be a predicate and $m, n$ nonnegative integers.  If $P(m)$ is true and $P(n) \Rightarrow P(n+1)$ for all $n \ge m$, then $P(n)$ is true for all $n \ge m$.
+        \item Writing an inductive proof is like explaining to someone how to climb a ladder. If you can describe how to get onto one of the lower rungs of the ladder and you can describe how to get from one rung to the next , then someone can repeat the procedure as many times as they'd like to climb a ladder of any height.
+        \item To write a proof by induction, first you need to identify the proposition to be proven.  Then prove the base case, prove the inductive step (how you can get from the proposition holding for $n$ to the proposition holding for $n+1$), and the conclusion.  Be sure you identify properly the thing being inducted upon.
+        \end{enumerate}
+
+        \problem{}{}
+
+        What is wrong with this proof that all cars are the same color?\\
+
+        Let $P(n)$ = ``every group of $n$ cars contains only cars of the same color.''\\
+        Base case $P(1)$: There is only one car in the group, thus clearly all cars in the group have the same color. \\
+        Inductive step: Assume $P(n)$ is true. We will show that it follows that $P(n+1)$ is true. \\
+        Consider a group of $n+1$ cars. The first $n$ cars must have the same color by the inductive assumption, and likewise the last $n$ cars must also have the same color by the inductive assumption. Because the two groups overlap in the middle, the cars in the first group must have the same color as the cars in the seconds group. Therefore, all $n+1$ cars must have the same color. Thus we have shown that $P(n+1)$ is true, and our proof is complete.
+
+        \begin{solution}
+
+        The proof hinges on the observation that ``the two groups overlap in the middle''; however, this is not the case when $n = 2$.
+
+        \end{solution}
+
+        \problem{}{}
+
+        Prove by induction that the decimal representation of every power of $3$ ends in one of the digits 1, 3 ,7, or 9.
+
+        \begin{solution}
+
+        Let $P(n)$ be $3^n$ ends in 1, 3, 7, or 9. We will prove by induction that $P(n)$ is true for $n\geq0$.
+
+        \textit{Base case, P(0):} $3^0 = 1$, which ends in 1. Therefore, $P(0)$ is true.
+
+        \textit{Inductive step:} Assume $P(n)$ (that $3^n$ ends in 1, 3, 7, or 9). We will show that $P(n+1)$ (that $3^{n+1}$ ends in 1, 3, 7, or 9) follows.
+
+        Consider $3^{n+1} = 3^n (3)$
+
+        By the inductive hypothesis, $3^n$ must end in 1, 3, 7, or 9. As a result, there are 4 possible cases:
+
+        \begin{enumerate}
+
+        \item The last digit of $3^n$ is 1. Since 1*3 = 3, the last digit of $3^{n+1}$ is 3. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 3. Since 3*3 = 9, the last digit of $3^{n+1}$ is 9. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 7. Since 7*3 = 21, the last digit of $3^{n+1}$ is 1. $P(n+1)$ holds true.
+
+        \item the last digit of $3^n$ is 9. Since 9*3 = 27, the last digit of $3^{n+1}$ is 7. $P(n+1)$ holds true.
+
+        \end{enumerate}
+
+        We can therefore conclude that $P(n+1)$ follows from $P(n)$. Since $P(0)$ is true and $P(n+1)$ follows from $P(n)$, we can conclude that $P(n)$ holds true for $n \geq 0$ and every power of $3$ ends in one of the digits 1, 3 ,7, or 9.
+
+        \end{solution}
+
+        \problem{}{}
+
+        (BONUS). Use induction to prove that for all nonnegative integers $n$:
+        \[ \sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6} \]
+
+        \begin{solution}
+
+        Let $P(n)$ be $\sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6}$. We will prove by induction that $P(n)$ is true for $n\geq0$.
+
+        \textit{Base case, P(0):}
+
+        $\sum_{k=0}^{n}k^{2}=\sum_{k=0}^{0}k^{2}= 0^2 = 0$
+
+        $\frac{n(n+1)(2n+1)}{6}=\frac{0(0+1)(2*0+1)}{6}=0$
+
+        Therefore, $P(0)$ is true.
+
+        \textit{Inductive step:} Assume $P(n)$. We will show that $P(n+1)$ follows.
+
+        $\sum_{k=0}^{n+1}k^{2} = \sum_{k=0}^{n}k^{2} + (n+1)^2$
+
+        $\sum_{k=0}^{n+1}k^{2} = \frac{n(n+1)(2n+1)}{6} + (n+1)^2$ by the inductive hypothesis
+
+        $\sum_{k=0}^{n+1}k^{2} = \frac{1}{6} (n(n+1)(2n+1) + 6(n+1)^2)$
+
+        \hspace{1.6cm}$ = \frac{1}{6} (n+1)(2n^2+n+6n+6)$
+
+        \hspace{1.6cm}$ = \frac{1}{6} (n+1)(2n^2+7n+6)$
+
+        \hspace{1.6cm}$ = \frac{1}{6} (n+1)(2n^2+4n+3n+6)$
+
+        \hspace{1.6cm}$ = \frac{1}{6} (n+1)(2n(n+2)+3(n+2))$
+
+        \hspace{1.6cm}$ = \frac{1}{6} (n+1)(2n+3)(n+2)$
+
+        \hspace{1.6cm}$ = \frac{(n+1)((n+1)+2)(2(n+1)+1)}{6}$
+
+        $P(n+1)$ therefore follows from $P(n)$.
+
+        We can therefore conclude that $P(n+1)$ follows from $P(n)$. Since $P(0)$ is true and $P(n+1)$ follows from $P(n)$, we can conclude that $P(n)$ holds true for $n \geq 0$ and $\sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6}$ for all non-negative integers $n$.
+
+        \end{solution}
+
+
+	\section{Strong Induction}
+	\subsection{Summary}
+        \begin{itemize}
+            \item In simple terms, strong induction is similar to ordinary induction, except you use $P(0)$, $\ldots$, $P(n)$ instead of just $P(n)$ in order to prove $P(n+1)$.
+            \item Formally, the difference between ordinary and strong induction is:\\
+            Let $P(x)$ be a predicate and $m,n$ nonnegative integers.
+            \begin{itemize}
+                \item Ordinary Induction: If $P(m)$ is true and $P(n) \Rightarrow P(n+1)$\\ for all $n \geq m$, then $P(n)$ is true for all $n \geq m$.
+                \item Strong Induction: If $P(m)$ is true and\\ $P(m), P(m+1), \dots, P(n)$ together $\Rightarrow P(n+1)$\\
+                for all $n \geq m$, then $P(n)$ is true for all $n \geq m$.
+            \end{itemize}
+            \item Strong induction proofs begin with the identification of the proposition to be proven. The next step is to identify and verify the base cases. Note that with strong induction there are often multiple base cases. Next comes the inductive step, where you show that the proposition's truth for $0\ldots n$ entails its truth for $n+1$. Be sure to properly identify the proposition being inducted on.
+            \item Note that sometimes you will need to break your inductive step into multiple cases.
+        \end{itemize}
+
+    \subsection{Example Problems}
+        \problem{}{}
+
+        Using induction, prove that for all positive integers $n$:
+        $$
+        \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{n}{n+1}
+        $$
+
+        \begin{solution}
+
+        Base case: $\sum_{k=1}^{1}\frac{1}{1(1+1)}=\frac{1}{1+1} = \frac{1}{2}$. Inductive step: Suppose it holds for $n \ge 1$.  $\sum_{k=1}^{n+1}\frac{1}{k(k+1)} = \frac{1}{(n+1)(n+2)} + \sum_{k=1}^{n}\frac{1}{k(k+1)}$. By the inductive hypothesis, $\sum_{k=1}^{n}\frac{1}{k(k+1)} = \frac{n}{n+1}$, so the former equation is $\frac{1}{(n+1)(n+2)} + \frac{n}{n+1} = \frac{n^2 + 2n+1}{(n+1)(n+2)} = \frac{(n+1)^2}{(n+1)(n+2)} = \frac{n+1}{n+2}$.
+
+        \end{solution}
+
+        \problem{}{}
+
+        The game of ``Take Away'' is played with a pile of 9 coins. Two teams take turns removing coins from the pile. At each turn, the team whose turn it is can choose to remove either one or two coins from the pile. The team that removes the last coin wins.
+
+        \subproblem Does the game have a winning strategy? Note: for the game to have a winning strategy one of the two teams -- either the team that removes coins first or the team that removes coins second -- must always be able to win.
+
+        \subproblem Generalize the game to a pile of any positive integer $n$ coins and show that the game always has a wining strategy (not necessarily for the same team).
+
+        \begin{solution}
+
+        \subsolution Yes, the second team can always win. The winning strategy for the second team is to ``complete to 3''. In other words, if the first team takes 1 coin, take 2 coins; if the first team takes 2 coins, take 1 coin.
+
+        \subsolution $P(n) = $ there exists a winning strategy in Take Away with $n$ coins. We claim $P(n)$ holds for all $n > 0$. Base cases: for $P(1)$ and $P(2)$, we have the trivial winning strategies of taking the first 1 or 2 coins. For $P(3)$, we again have the trivial winning strategy of taking whatever coins remain after the first team plays. Strong inductive step: suppose that $P(1), ..., P(n)$ hold. For $m > 3$, we know that $P(m-3)$ holds by the inductive hypothesis. In other words, one of the teams can play so that they pick up the fourth to last coin. This team has a winning strategy: play so that they pick up the fourth to last coin, and then pick up the remaining 1 or 2 coins based on the other team's play. Thus $P(m)$, and we have finished the proof.
+
+        \end{solution}
+
+        \problem{}{}
+
+        Let $S$ be the sequence $a_1, a_2, a_3, \ldots$ where $a_1 = 1$, $a_2 = 2$, $a_3 = 3$, and $a_n = a_{n-1} + a_{n-2} + a_{n-3}$. Use strong induction to prove that $a_n < 2^n$ for all $n \geq 4$.
+
+        \begin{solution}
+
+        $P(n) = a_n < 2^n$ for all $n \geq 4$. Base cases: $P(4), P(5), P(6)$ hold (simply plug in the numbers). Strong inductive step: Suppose that $P(4), ..., (n)$ hold for $n \geq 6$. Notice that $a_{n+1} = a_n + a_{n-1} + a_{n-2} = (a_{n-1} + a_{n-2} + a_{n-3}) + a_{n-1} + a_{n-2} = 2(a_{n-1}+a_{n-2}) + a_{n-3}$. We know from the inductive hypothesis that $a_{n-3} < 2^{n-3} < 2^{n-1}$. We also know $a_{n-1} < 2^{n-1}$ and $a_{n-2} < 2^{n-2}$. Thus $a_{n+1} =  2(a_{n-1}+a_{n-2}) + a_{n-3} < 2(2^{n-1} + 2^{n-2}) + 2^{n-1} \implies a_{n+1} <2^{n+1}$.
+
+        \end{solution}
+
+        \problem{}{}
+
+        (BONUS). Prove using strong induction that for all $n \in \mathbb{N}$ such that $n \ge 2$, $n$ is divisible by a prime. {\em (Hint: In this problem, we consider all divisors, not just proper divisors, so a number is considered as being divisible by itself.  Split the inductive step into cases based on whether $n+1$ is prime.  What does it mean for a number to be composite?)}
+
+        \begin{solution}
+
+        $P(n) = n$ is divisible by a prime. Base cases: $P(2)$ is true, since 2 is divisible by itself. Strong inductive step: assume that $P(2)...P(n)$ holds for $n \ge 2$. If $n+1$ is prime, then it is divisible by itself, and $P(n+1)$ holds. Otherwise $n+1$ is composite, so there exists  $m, k < n+1$ such that $mk = n+1$. By the inductive hypothesis, $P(m)$ (and $P(k)$). So a prime divides $m$, and $m$ divides $n+1$, so that same prime divides $n+1$, and $P(n+1)$ holds.
+
+        \end{solution}
+
+        \problem{}{} Consider the sequence $a_1= 2, a_2= 5, a_3= 13, \cdots , a_{n} = 5a_{n-1} - 6 a_{n-2}$.
+        Prove by strong induction that $a_n = 2^{n-1} + 3^{n-1}$ for all $n > 2$.
+
+        \begin{solution}
+
+        $P(n) = a_n = 2^{n-1} + 3^{n-1}$ for all $n > 2$. Base cases: $P(3), P(4), $ hold; simply plug in the numbers. Strong inductive step: suppose $P(3), ..., P(n)$ hold for $n \ge 4$. Then for $P(n+1)$, note that $a_{n+1} = 5a_{n} - 6 a_{n-1} = 5(2^{n-1} + 3^{n-1}) - 6(2^{n-2} + 3^{n-2}) = 5(2^{n-1}) + 5(3^{n-1}) - 3(2^{n-1}) - 2(3^{n-1}) = 2^n + 3^n$.
+
+        \end{solution}
+
+        \problem{}{}
+        Let $a_1=1$ and for every $k \geq 1$, $a_{k+1}=3a_k+1$. Prove that for every $k \geq1 $, $a_k$ is odd or even depending on whether $k$ is odd or even, respectively. You may assume that the product of an even number and another number is even, and the product of two odd numbers is odd.
+
+        \begin{solution}
+        Let $P(n)$ be the predicate that $a_n$ is odd if and only if $n$ is odd. Base case: $P(1)$ holds, since $1 = a_1$ are both odd. Inductive hypothesis: suppose that $P(n)$ holds for $n \ge 1$. Case 1: $n$ is even. Then $n+1$ is odd, and $a_{n+1} = 3a_n + 1$. By the inductive hypothesis, $a_n$ must be even. An even number times an even number is always even, so $3a_n$ is even. An even number $+1$ is odd, so $a_{n+1}$ is odd. Case 2: $n$ is odd. By the inductive hypothesis, $a_n$ must be odd. An odd number times an odd number is odd, so $3a_n$ is odd. An odd number $+1$ is even, so $a_{n+1}$ is even.
+        \end{solution}
+
+	\section{Propositional Logic}
+	\subsection{Summary}
+	    \begin{enumerate}
+
+        \item  A proposition is a statement that is either \emph{True} or \emph{False}. For brevity, we label propositions with letters ($p$ : ``Gold is a metal'').  In this case we can also say that \emph{p} is a propositional (Boolean) variable.
+        \item Logical operators combine propositions into \emph{compound} propositions . List of the most common logical operators:
+
+        \begin{tabular}{ | l l l |}
+        \hline
+        Symbol & Operation & Note\\
+        \hline
+        $\land$ & AND (Conjunction) & $p \land q$ is true when both $p$ and $q$ are true.\\
+        \hline
+        $\lor$ & OR (Disjunction)& $p \lor q$ is true when at least one of $p$ and $q$ is true.\\
+        \hline
+        $\neg$ & Negation & Another symbol is the horizontal bar: $\neg(p \land q) \equiv \overline{p \land q}$\\
+        \hline
+        $\oplus$ & Exclusive OR. & Like OR but it's false when both $p$ and $q$ are true. \\
+        \hline
+        $\to$ & Implication & Important equivalence: $p\to q \equiv \neg p \lor q$\\
+        \hline
+        $\leftrightarrow$ & IFF & Important equivalence: $p \leftrightarrow q \equiv (p \to q) \land (q \to p)$\\
+        \hline
+        \end{tabular}
+        \end{enumerate}
+    \subsection{Example Problems}
+
+        \problem{}{}
+
+        Prove by truth table the first of the two distributive laws:
+        \begin{center}
+        $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+        \end{center}
+
+        \begin{solution}
+
+        \begin{table}[h]
+        \centering
+        \label{my-label}
+        \begin{tabular}{lllll}
+        $p$ & $q$ & $r$ & $p \lor (q \land r)$ & $(p \lor q) \land (p \lor r)$ \\
+        1 & 1 & 1 & 1                    & 1                           \\
+        1 & 1 & 0 & 1                    & 1                           \\
+        1 & 0 & 1 & 1                    & 1                           \\
+        1 & 0 & 0 & 1                    & 1                           \\
+        0 & 1 & 1 & 1                    & 1                           \\
+        0 & 1 & 0 & 0                    & 0                           \\
+        0 & 0 & 1 & 0                    & 0                           \\
+        0 & 0 & 0 & 0                    & 0
+        \end{tabular}
+        \end{table}
+
+        \end{solution}
+
+        \problem{}{} Let $A = \neg p \lor q$ and $B = p \oplus \neg q$. Show by writing out the two truth tables that these two formulas are not equivalent.
+
+        \begin{solution}
+        \begin{table}[h]
+        \centering
+        \label{my-label}
+        \begin{tabular}{llll}
+        $p$ & $q$ & $\neg p \lor q$ & $p \oplus \neg q$ \\
+        1   & 1   & 1               & 1                 \\
+        1   & 0   & 0               & 0                 \\
+        0   & 1   & 1               & 0                 \\
+        0   & 0   & 1               & 1
+        \end{tabular}
+        \end{table}
+        \end{solution}
+
+        \problem{}{}
+
+        \subproblem
+        Using the propositions p=``I study'', q=``I will pass the course'', r=``The professor accepts bribes'',  translate the following into statements of propositional logic:
+        	\begin{enumerate}
+        	\item If I do not study, then I will not pass the course unless the professor accepts bribes.
+        	\item If the professor accepts bribes, then I will pass the course regardless of whether or not I study.
+        	\item The professor does not accept bribes, but I study and will pass the course.
+        	\end{enumerate}
+
+
+        \subproblem Using the propositions p=``The night hunting is successful'', q=``The moon is full'', r=``The sky is cloudless'', translate the following into statements of propositional logic:
+
+        	\begin{enumerate}
+        	\item For successful night hunting it is necessary that the moon is full and the sky is cloudless.
+        	\item The sky being cloudy is both necessary and sufficient for the night hunting to be successful.
+        	\item  If the sky is cloudy, then the night hunting will not be successful unless the moon is full.
+        	\end{enumerate}
+
+        \begin{solution}
+
+        \subsolution
+
+        \begin{enumerate}
+        \item $(\neg p \land q) \to r$
+        \item $r \implies q$
+        \item $\neg r \land p \land q$
+        \end{enumerate}
+
+        \subsolution
+
+        \begin{enumerate}
+        \item $p \to (q \land r)$
+        \item $\neg r \leftrightarrow q$
+        \item $(\neg r \land p) \to q$
+        \end{enumerate}
+
+        \end{solution}
+
+        \problem{}{} In the mini-lecture you saw how to add two boolean variables using logic operators. In this problem we will show how to subtract two boolean variables.\\
+        Consider the boolean variables $a, b, c$ each representing a single bit. Write two propositional formulas: one for the result of the boolean subtraction $a-b$, and another for the the ``borrow bit" $c$, indicating whether a bit must be borrowed from an imaginary bit to the left of $a$ (the case when a=0 and b=1) to ensure that the result of the subtraction is always positive. Start by creating a ``truth'' table for $a-b$ and the borrow bit $c$. The borrow bit $c$ is always 1 initially, and is set to 0 only if borrowing was necessary.
+
+        \begin{solution}
+
+        \begin{table}[]
+        \centering
+        \label{my-label}
+        \begin{tabular}{llll}
+        $a$ & $b$ & $a-b$ & $c$ \\
+        1 & 1 & 0   & 0 \\
+        1 & 0 & 1   & 0 \\
+        0 & 1 & 1   & 1 \\
+        0 & 0 & 0   & 0
+        \end{tabular}
+        \end{table}
+
+        So: $a-b = a \oplus b$ and $c = \neg a \land b$.
+
+        \end{solution}
+
+        \problem{}{} Using a truth table, find which of the following compound propositions are always true, regardless of the values of p and q:
+
+        \begin{enumerate}
+        \item $p \rightarrow (p \lor q)$
+        \item $\lnot (p \rightarrow (p \lor q))$
+        \item $p \rightarrow (p \rightarrow q)$
+        \end{enumerate}
+
+        \begin{solution}
+
+        \begin{enumerate}
+        \item Always true
+        \item Always false
+        \item Not true for $p = 1, q = 0$
+        \end{enumerate}
+
+        \end{solution}
+
+	\section{Equivalences and Normal Forms}
+    \subsection{Summary}
+        \begin{enumerate}
+
+        \item Forms of propositional formulas
+
+        \begin{itemize}
+          \item  Disjunctive normal form: \textsc{Or}s of \textsc{And}-terms, where each \textsc{And}-term consists of variables (or negations of variables), e.g. $(p \land q) \lor (p \land r) \lor (q \land \lnot r \land t) $, or $(p \land q \land  r) \lor (\lnot p \land q \land r)\lor (\lnot p \land \lnot q \land r) $.
+          \item Conjunctive normal form: \textsc{And}s of \textsc{Or}-terms, where each \textsc{Or}-term consists of variables (or negations of variables), e.g. $(p \lor \lnot q) \land (p \lor r) \land (q \lor \lnot r \lor t)$, or $(p \lor q \lor r) \land (p \lor \lnot q \lor r) \land (\lnot p \lor q \lor r)$.
+
+        \end{itemize}
+
+        \item De Morgan's Laws and Double Negation:
+          \begin{itemize}
+            \item $\lnot (A \land B) \longleftrightarrow \lnot A \lor \lnot B$
+            \item $\lnot (A \lor B) \longleftrightarrow \lnot A \land \lnot B$
+            \item $\lnot (\lnot A) \longleftrightarrow A$
+          \end{itemize}
+
+        \item Associative Laws
+          \begin{itemize}
+            \item $(A \land B) \land C \longleftrightarrow A \land (B \land C) \longleftrightarrow A \land B \land C$
+            \item $(A \lor B) \lor C \longleftrightarrow A \lor (B \lor C) \longleftrightarrow A \lor B \lor C$
+          \end{itemize}
+
+        \item Distributive Laws
+          \begin{itemize}
+            \item $A \land (B \lor C) \longleftrightarrow (A \land B) \lor (A \land C)$
+             \item $A \lor (B \land C) \longleftrightarrow (A \lor B) \land (A \lor C)$
+          \end{itemize}
+
+        \item Tautologies and Satisfiability
+          \begin{itemize}
+            \item Tautology:  Formula that is true under all possible truth assignments.
+            \item Satisfiable:  Formula that is true for at least one truth assignment.
+            \item Unsatisfiable:  Formula whose negation is a tautology.
+          \end{itemize}
+
+        \end{enumerate}
+
+
+    \subsection{Example Problems}
+
+        \problem{1}{1}
+
+        \subproblem Explain why $A \rightarrow B \equiv \lnot A \lor B$ (Hint: use truth tables in your answer).
+
+        \subproblem The following formula is satisfiable.  \emph{Without using a truth table}, find a satisfying assignment, and explain your method:
+        	$$(((p \lor q \lor r) \land (\neg r \land s)) \lor \neg p) \rightarrow ((\neg s \lor t) \oplus \neg q) $$
+
+        \begin{solution}
+
+        \subsolution
+          First, let's consider the truth table for $A \rightarrow B$. If $A$ is true, then $B$ must also be true. If $A$ isn't true, then we do not require that $B$ be either true or false.
+          \begin{center}
+            \begin{tabular}{|c|c|c|}\hline
+              $A$ & $B$ & $A \rightarrow B$ \\\hline
+              0 & 0 & 1 \\
+              0 & 1 & 1 \\
+              1 & 0 & 0 \\
+              1 & 1 & 1 \\\hline
+            \end{tabular}
+          \end{center}
+
+          Next, let's write out the truth table for $\lnot A \lor B$.
+          \begin{center}
+            \begin{tabular}{|c|c|c|}\hline
+              $A$ & $B$ & $\lnot A \lor B$ \\\hline
+              0 & 0 & 1 \\
+              0 & 1 & 1 \\
+              1 & 0 & 0 \\
+              1 & 1 & 1 \\\hline
+            \end{tabular}
+          \end{center}
+
+          Since the truth tables are identical, we can conclude that the two expressions are equivalent.
+
+        \subsolution Rewrite the formula as $A \rightarrow B \equiv \lnot A \lor B$, by the equivalence in Problem 1. If we set $p$ to 1 and $s$ to 0, then $A$ will evaluate to 0 and we have found a satisfying assignment. We can then populate the other variables with whatever values we wish. The following assignment is satisfying: $p = 1$, $q = 0$, $r = 0$, $s = 0$, $t = 0$.
+
+        \end{solution}
+
+        \problem{2}{1}
+
+        \subproblem Put the following formula in conjunctive normal form: $(\lnot (p \oplus q)) \rightarrow r$.
+        \subproblem Put the following formula in disjunctive normal form: $p \lor (q \rightarrow p)$
+
+        \problem{3}{1}
+
+        \subproblem Find an easy way to check whether a formula in disjunctive normal form is satisfiable.
+        \subproblem (BONUS) Sam wakes up one night thinking that he has solved the P=?NP question:  P = NP!  Given a logical formula, just put the formula into disjuntive normal form, then use the method in part (a) to check to see if it is satisfiable. Why won't Sam win the million dollar prize for settling the question?
+
+        \begin{solution}
+        \subsolution A DNF formula is satisfiable if and only if at least one of its terms is satisfiable, and a term is satisfiable if and only if it does not contain both $p$ and $\lnot p$ for some variable $p$. This can be checked in polynomial time.
+        \subsolution It can take exponential time to convert a formula to disjunctive normal form.
+        \end{solution}
+
+        \problem{4}{1}
+
+        Determine which of the following are equivalent to $(p \land q) \rightarrow r$ and which are equivalent to $(p \lor q) \rightarrow r$:
+
+        \subproblem $p \rightarrow (q \rightarrow r)$
+        \subproblem $q \rightarrow (p \rightarrow r)$
+        \subproblem $(p \rightarrow r) \land (q \rightarrow r)$
+        \subproblem $(p \rightarrow r) \lor (q \rightarrow r)$
+
+        \begin{solution}
+        \subsolution Equivalent to $(p \land q) \rightarrow r$
+        \subsolution Equivalent to $(p \land q) \rightarrow r$
+        \subsolution Equivalent to $(p \lor q) \rightarrow r$
+        \subsolution Equivalent to $(p \land q) \rightarrow r$
+        \end{solution}
+
+	\section{Logic and Computers}
+	    \subsection{Summary}
+
+	    \begin{enumerate}
+
+        \item Logic gates. The logic gate is a physical device performing a logic operation. List of common logic gates:
+        \begin{table}[h]
+
+        \centering
+        \begin{tabular}{| l | l |}
+        \hline
+        Gate & Operation \\ \hline
+        \textsc{And} & $a \land b$ \\ \hline
+        \textsc{Or} & $a \lor b$ \\ \hline
+        \textsc{Not} & $\lnot a$ \\ \hline
+        \textsc{Nand} & $\lnot(a \land b)$ \\ \hline
+        \textsc{Nor} & $\lnot(a \lor b)$ \\ \hline
+        \textsc{Xor} & $a \oplus b$ \\ \hline
+        \textsc{Xnor} & $\lnot (a \oplus b)$ \\ \hline
+        \end{tabular}
+        \end{table}
+
+        The gates \textsc{Nand} and \textsc{Nor} are special because they are functionally complete: each one of them is capable of representing all possible propositional formulas. This means that every logic circuit can be built using only NAND gates or using only\textsc{Nor} gates.
+
+        \item Binary Arithmetic. There is a close relationship between arithmetic operations (addition, subtraction,...) and logic operations (\textsc{And},\textsc{Or}, ...) when the numbers being manipulated are represented in binary. Computers perform arithmetic using logic circuits that are essentially physical implementations of propositional formulas.
+
+        \end{enumerate}
+
+    \subsection{Example Problems}
+
+        \problem{1}{}
+        Perform the following operations in binary, check your answers by performing the same operations in decimal:
+            \subproblem $11011_2 + 11010_2$
+            \subproblem $1110_2 - 1011_2$
+
+        \begin{solution}
+            \subsolution $110101_2 = 53$
+            \subsolution $11_2 = 3$
+        \end{solution}
+
+        \problem{2}{}
+        A light bulb is connected to three light switches so that:
+          \begin{itemize}
+            \item When all of the switches are off, the light bulb is not lit.
+            \item When any switch is flipped from on to off or vice versa, the light bulb goes out if it was lit or lights up if it was off.
+          \end{itemize}
+        Construct a circuit that could connect the three switches to the bulb in this way.
+
+        \begin{solution}
+
+        The bulb should only light when an odd number of switches are activated. Suppose our three inputs are labeled A, B and C. We can construct a circuit as follows: feed A and B into an \textsc{Xor} gate, and feed the output from that gate into an \textsc{Xor} gate with C. The output from that gate should be connected to the light switch.
+        \end{solution}
+
+        \problem{3}{}
+        The Orcish elevator in Middle-earth is a peculiar machine: it can move up only during the day, and move down --- only during the night. In addition, it cannot move up if it's cold, and it cannot move down if it's hot. Define p and q:
+
+        \begin{enumerate}
+            \item p: It is day.
+            \item q: It is cold.
+        \end{enumerate}
+
+        \subproblem Write a proposition that evaluates to True if the elevator can move (in either direction).
+        \subproblem Design but do not draw a logic circuit that implements the proposition in (a) with as few gates as possible from this list: \textsc{Not}, \textsc{Or}, \textsc{And}, \textsc{Nor}, \textsc{Nand}, \textsc{Xor}, \textsc{Xnor}. Can you do it with a single gate?
+
+        \begin{solution}
+        \subsolution
+            The elevator can move \emph{up} if $p \land \lnot q$ evaluates to true. \\
+            The elevator can move \emph{down} if $\lnot p \land q$ evaluates to true. \\
+            Thus, the elevator can move in either direction if $(p \land \lnot q) \lor (\lnot p \land q)$ is true.
+
+        \subsolution Since $(p \land \lnot q) \lor (\lnot p \land q) \equiv p \oplus q$, a single \textsc{Xor} gate will suffice.
+
+        \end{solution}
+
+        \problem{4}{}
+        Construct the following gates:
+        \subproblem An \textsc{And} gate, using only \textsc{Not} and \textsc{Or} gates
+        \subproblem An \textsc{Xnor} gate, using only \textsc{And}, \textsc{Not} and \textsc{Or} gates.
+        \subproblem An \textsc{Xnor} gate, using only \textsc{Not} and \textsc{Or} gates.
+
+        \begin{solution}
+        \subsolution $A \land B \equiv \lnot (\lnot A \lor \lnot B)$ using De Morgan's Laws.
+        \subsolution \textsc{Xnor} is the logical complement of \textsc{Xor}. Thus $\lnot (A \oplus B) \equiv \lnot((A \lor B) \land \lnot (A \land B)) \equiv \lnot (A \lor B) \lor (A \land B)$ using De Morgan's Laws.
+        \subsolution Continuing with the equivalences above, we have $\lnot (A \lor B) \lor (A \land B) \equiv \lnot (A \lor B) \lor \lnot (\lnot (A \land B)) \equiv \lnot (A \lor B) \lor \lnot (\lnot A \lor \lnot B)$
+        \end{solution}
+
+
+\end{document}

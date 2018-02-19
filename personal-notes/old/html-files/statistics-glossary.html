@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>statistics-glossary</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>&lt;a href=&quot;#Principles&quot;&gt;</p>
+<h1 id="definitions">Definitions</h1>
+<dl>
+<dt>Set:</dt>
+<dd><p>Collection of objects that is determined by its members.</p>
+</dd>
+<dt>Finite Set:</dt>
+<dd><p>A set that has a count to it</p>
+</dd>
+<dt>Cardinality (size of a set):</dt>
+<dd><p>Number of elements in a set (aka length)</p>
+</dd>
+<dt>function:</dt>
+<dd><p>is an association of elements of one set with elements of another set</p>
+</dd>
+<dt>Domain of a function:</dt>
+<dd><p>Set of &quot;input&quot; or argument values for which the domain is defined</p>
+</dd>
+<dt>Function:</dt>
+<dd><p>output of a function</p>
+</dd>
+<dt>Distinct:</dt>
+<dd><p>two things are called distinct if they are not equal</p>
+</dd>
+<dt>Proposition:</dt>
+<dd><p>is a statement that is either true or false.</p>
+</dd>
+<dt>Predicate:</dt>
+<dd><p>A proposition whose truth depends on the value of one or more variables</p>
+</dd>
+<dt>Injective:</dt>
+<dd><p>One to one function that preserves distinctiveness</p>
+</dd>
+<dt>Proof:</dt>
+<dd><p>a method of establishing truth</p>
+</dd>
+<dt>Axiom:</dt>
+<dd><p>a statement or proposition on which an abstractly defined structure is based.</p>
+</dd>
+<dt>Mathematical Proof of a proposition:</dt>
+<dd><p>is a chain of logical deduction leading to the proposition from a base set of axioms.</p>
+</dd>
+<dt>Theorems: </dt>
+<dd><p>Important true propositions</p>
+</dd>
+<dt>Lemma: </dt>
+<dd><p>is a preliminary proposition useful for proving later propositions.</p>
+</dd>
+<dt>Corollary: </dt>
+<dd><p>is a proposition that follows in just a few logical steps from a theorm.</p>
+</dd>
+<dt>Prime: </dt>
+<dd><p>is an integer greater than 1 that is not divisible by any other integer greater than 1</p>
+</dd>
+</dl>
+<h2 id="mathematical-symbols">Mathematical Symbols</h2>
+<dl>
+<dt> <span class="math inline">\(::=\)</span> :</dt>
+<dd><p>Equal by definition</p>
+</dd>
+<dt> <span class="math inline">\(\forall\)</span> :</dt>
+<dd><p>For all</p>
+</dd>
+<dt> <span class="math inline">\(\forall\)</span> :</dt>
+<dd>
+</dd>
+<dt> <span class="math inline">\(\forall\)</span> :</dt>
+<dd>
+</dd>
+</dl>
+<h1 id="pigeonhole-principle">Pigeonhole Principle</h1>
+<p>&lt;div id=&quot;Principles&quot;</p>
+<h2 id="principles">Principles</h2>
+<dl>
+<dt>Pigeonhole Principle :</dt>
+<dd><p>If there are more pigeons than holes they occupy, then at least two pigeons must be in the same hole.</p>
+</dd>
+<dt>Generalized Pigeonhole Principle :</dt>
+<dd><p>If <span class="math inline">\(|A| &gt; k * |B|\)</span>, then every total function <span class="math inline">\(f : A \implies B\)</span> maps at least <span class="math inline">\(k + 1\)</span> different elements of A to the same element of B.</p>
+</dd>
+</dl>
+<h2 id="example-pigeonhole-principle-problems">Example Pigeonhole Principle Problems</h2>
+
+<p>Let <span class="math inline">\(A\)</span> be the set of your pigeons, and let <span class="math inline">\(B\)</span> be the set of pigeonholes in which they live. The <em>Generalized Pigeonhole Principle</em> states that for a natural number <span class="math inline">\(k\)</span>, if <span class="math inline">\(|A| &gt; k|B|\)</span>, then there exists a pigeonhole in which more than <span class="math inline">\(k\)</span> pigeons live. Prove the Generalized Pigeonhole Principle by contradiction.</p>
+<p>Proof. We use proof by contradiction. Let <span class="math inline">\(k\)</span> in <span class="math inline">\(\left\vert{A}\right\vert &gt; k\left\vert{B}\right\vert\)</span> be a <span class="math inline">\(\mathbb{N}\)</span>. Assume that some function (one-to-one) <span class="math inline">\(f\)</span> from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> exists, and that all <span class="math inline">\(B\)</span> elements contain less than or equal to <span class="math inline">\(A\)</span> elements. Then for every distinct element of <span class="math inline">\(\left\vert{A}\right\vert\)</span> there must map less than or equal to a distinct element of <span class="math inline">\(k\left\vert{A}\right\vert\)</span>. This is a contradiction. Therefore, <span class="math inline">\(\left\vert{A}\right\vert &gt; k\left\vert{B}\right\vert\)</span> must be false.</p>
+
+<p>Prove that if you pick 5 distinct integers from <span>1, . . . , 100</span>, some two differ by at most 24.</p>
+<p>Divide the integers <span>1,...,100</span> into the 4 sets of integers <span>1,...,25</span>, <span>26,...,50</span>, <span>51,...,75</span>, and <span>76, . . . , 100</span>. Let each of this four sets be a pigeonhole. We are picking 5 integers from <span>1,...,100</span>. Let each of these five integers be a pigeon. By the pigeonhole principle there must be two integers in the same set. Since the smallest and largest integers in each set differ by only 24, the 2 integers from the same set can differ by at most 24, and so there must be some 2 of our 5 integers that differ by at most 24.</p>
+<h1 id="proofs">Proofs</h1>
+<h2 id="summary">Summary</h2>
+<dl>
+<dt>Axiom:</dt>
+<dd><p>a statement or proposition on which an abstractly defined structure is based.</p>
+</dd>
+<dt>Mathematical Proof of a Proposition:</dt>
+<dd><p>is a chain of logical deduction leading to the proposition from a base set of axioms.</p>
+</dd>
+</dl>
+<h2 id="types-of-proofs">Types of Proofs</h2>
+<dl>
+<dt>Proposition: </dt>
+<dd><p>A is any declarative sentence that is either true or false.</p>
+</dd>
+<dt>Contrapositive: </dt>
+<dd><p>The of an implication is logically equivalent to the original implication</p>
+<ol>
+<li><p>to prove “<span class="math inline">\(P \implies Q\)</span>”, prove “<span class="math inline">\(\neg Q \implies \neg P\)</span>.”</p></li>
+<li><p>The of “If <span class="math inline">\(P \implies Q\)</span>” is “if <span class="math inline">\(Q \implies P\)</span>”</p></li>
+</ol>
+</dd>
+<dt>If and only if: </dt>
+<dd><p>to prove that <span class="math inline">\(P \iff Q\)</span>, prove <span class="math inline">\(P \implies Q \land Q \implies P\)</span>.</p>
+</dd>
+<dt>Contradiction: </dt>
+<dd><p>to prove that <span class="math inline">\(P\)</span> is true, assume that <span class="math inline">\(P\)</span> is false and show that the assumption leads to a contradiction.</p>
+</dd>
+<dt>Alternative: </dt>
+<dd><p>to prove that <span class="math inline">\(P \iff Q\)</span>, prove <span class="math inline">\(P \implies Q\)</span> and <span class="math inline">\(\neg P \implies \neg Q\)</span>.</p>
+</dd>
+</dl>
+<h2 id="proof-gotchasmistakes">Proof Gotchas/Mistakes!</h2>
+<ol>
+<li><p>Canceling a factor that might be zero from both sides of an equation (“division by zero”).</p></li>
+<li><p>Multiplying both sides of an inequality by a number that might be negative.</p></li>
+<li><p>Assuming that <span class="math inline">\((a2 = b2) \implies (a = b)\)</span>.<br />
+Correct is <span class="math inline">\((a2 = b2) \implies (|a| = |b|)\)</span>.</p></li>
+<li><p>Ignoring a special case; e.g. proving <span class="math inline">\(P(n)\)</span> by considering only <span class="math inline">\(n &gt; 0\)</span> and <span class="math inline">\(n &lt; 0\)</span>.</p></li>
+</ol>
+<h2 id="example-problems">Example Problems</h2>
+
+<p>Each of the following claims and corresponding proofs is incorrect. Explain why each proof is incorrect.</p>
+<p>Claim: <span class="math inline">\(1c = \$1\)</span> <span class="math display">\[1c = \$0.01= (\$ 0.1)^2 = (10c)^2 = 100c =\$1\]</span></p>
+<p>Claim: If <span class="math inline">\(a=b\)</span> then <span class="math inline">\(a=0\)</span><br />
+<span class="math display">\[a=b\]</span><span class="math display">\[a^2=ab\]</span><span class="math display">\[a^2-b^2=ab-b^2\]</span><span class="math display">\[(a-b)(a+b)=(a-b)b\]</span><span class="math display">\[a+b=b\]</span><span class="math display">\[a=0\]</span></p>
+<p><span class="math inline">\((10c)^2 = 100c\)</span> is not true. The correct equality is <span class="math inline">\((10c)^2 = 100c^2\)</span>.<br />
+You cannot divide <span class="math inline">\((a-b)(a+b) = (a-b)b\)</span> by <span class="math inline">\((a-b)\)</span> since <span class="math inline">\((a-b)\)</span> might be 0.</p>
+
+<p>Prove that in any group of six people, at least two of them know the same number of people. Note that you don’t know yourself, and that if A knows B then B knows A (thus “knows” is a symmetric relation).</p>
+<p>There are 6 possible numbers of people a person can know (0 through 5 since you cannot know yourself ). Suppose that each person knows a different number of people. Then someone (person A) knows 0 people and someone (person B) else knows 5 people. Since B knows 5 people and cannot know him or herself, then B knows A. Since knowing is a symmetric relation, A knows B. This is a contradiction because A knows 0 people. Since we have arrived at a contradiction, we can conclude that in any group of six people, at least two of them know the same number of people.</p>
+
+<p>What is wrong with this proof that all cars are the same color?<br />
+Let <span class="math inline">\(P(n)\)</span> = “every group of <span class="math inline">\(n\)</span> cars contains only cars of the same color.”<br />
+Base case <span class="math inline">\(P(1)\)</span>: There is only one car in the group, thus clearly all cars in the group have the same color.<br />
+Inductive step: Assume <span class="math inline">\(P(n)\)</span> is true. We will show that it follows that <span class="math inline">\(P(n+1)\)</span> is true.<br />
+Consider a group of <span class="math inline">\(n+1\)</span> cars. The first <span class="math inline">\(n\)</span> cars must have the same color by the inductive assumption, and likewise the last <span class="math inline">\(n\)</span> cars must also have the same color by the inductive assumption. Because the two groups overlap in the middle, the cars in the first group must have the same color as the cars in the seconds group. Therefore, all <span class="math inline">\(n+1\)</span> cars must have the same color. Thus we have shown that <span class="math inline">\(P(n+1)\)</span> is true, and our proof is complete.</p>
+<p>The proof hinges on the observation that “the two groups overlap in the middle”; however, this is not the case when <span class="math inline">\(n = 2\)</span>.</p>
+
+<p>Prove by induction that the decimal representation of every power of <span class="math inline">\(3\)</span> ends in one of the digits 1, 3 ,7, or 9.</p>
+<p>Let <span class="math inline">\(P(n)\)</span> be <span class="math inline">\(3^n\)</span> ends in 1, 3, 7, or 9. We will prove by induction that <span class="math inline">\(P(n)\)</span> is true for <span class="math inline">\(n\geq0\)</span>.</p>
+<p><em>Base case, P(0):</em> <span class="math inline">\(3^0 = 1\)</span>, which ends in 1. Therefore, <span class="math inline">\(P(0)\)</span> is true.</p>
+<p><em>Inductive step:</em> Assume <span class="math inline">\(P(n)\)</span> (that <span class="math inline">\(3^n\)</span> ends in 1, 3, 7, or 9). We will show that <span class="math inline">\(P(n+1)\)</span> (that <span class="math inline">\(3^{n+1}\)</span> ends in 1, 3, 7, or 9) follows.</p>
+<p>Consider <span class="math inline">\(3^{n+1} = 3^n (3)\)</span></p>
+<p>By the inductive hypothesis, <span class="math inline">\(3^n\)</span> must end in 1, 3, 7, or 9. As a result, there are 4 possible cases:</p>
+<ol>
+<li><p>The last digit of <span class="math inline">\(3^n\)</span> is 1. Since 1*3 = 3, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 3. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 3. Since 3*3 = 9, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 9. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 7. Since 7*3 = 21, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 1. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 9. Since 9*3 = 27, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 7. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+</ol>
+<p>We can therefore conclude that <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>. Since <span class="math inline">\(P(0)\)</span> is true and <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>, we can conclude that <span class="math inline">\(P(n)\)</span> holds true for <span class="math inline">\(n \geq 0\)</span> and every power of <span class="math inline">\(3\)</span> ends in one of the digits 1, 3 ,7, or 9.</p>
+<h1 id="ordinal-induction">Ordinal Induction</h1>
+<h2 id="summary-1">Summary</h2>
+<ol>
+<li><p>Let <span class="math inline">\(P(x)\)</span> be a predicate and <span class="math inline">\(m, n\)</span> nonnegative integers. If <span class="math inline">\(P(m)\)</span> is true and <span class="math inline">\(P(n) \Rightarrow P(n+1)\)</span> for all <span class="math inline">\(n \ge m\)</span>, then <span class="math inline">\(P(n)\)</span> is true for all <span class="math inline">\(n \ge m\)</span>.</p></li>
+<li><p>Writing an inductive proof is like explaining to someone how to climb a ladder. If you can describe how to get onto one of the lower rungs of the ladder and you can describe how to get from one rung to the next , then someone can repeat the procedure as many times as they’d like to climb a ladder of any height.</p></li>
+<li><p>To write a proof by induction, first you need to identify the proposition to be proven. Then prove the base case, prove the inductive step (how you can get from the proposition holding for <span class="math inline">\(n\)</span> to the proposition holding for <span class="math inline">\(n+1\)</span>), and the conclusion. Be sure you identify properly the thing being inducted upon.</p></li>
+</ol>
+
+<p>What is wrong with this proof that all cars are the same color?<br />
+Let <span class="math inline">\(P(n)\)</span> = “every group of <span class="math inline">\(n\)</span> cars contains only cars of the same color.”<br />
+Base case <span class="math inline">\(P(1)\)</span>: There is only one car in the group, thus clearly all cars in the group have the same color.<br />
+Inductive step: Assume <span class="math inline">\(P(n)\)</span> is true. We will show that it follows that <span class="math inline">\(P(n+1)\)</span> is true.<br />
+Consider a group of <span class="math inline">\(n+1\)</span> cars. The first <span class="math inline">\(n\)</span> cars must have the same color by the inductive assumption, and likewise the last <span class="math inline">\(n\)</span> cars must also have the same color by the inductive assumption. Because the two groups overlap in the middle, the cars in the first group must have the same color as the cars in the seconds group. Therefore, all <span class="math inline">\(n+1\)</span> cars must have the same color. Thus we have shown that <span class="math inline">\(P(n+1)\)</span> is true, and our proof is complete.</p>
+<p>The proof hinges on the observation that “the two groups overlap in the middle”; however, this is not the case when <span class="math inline">\(n = 2\)</span>.</p>
+
+<p>Prove by induction that the decimal representation of every power of <span class="math inline">\(3\)</span> ends in one of the digits 1, 3 ,7, or 9.</p>
+<p>Let <span class="math inline">\(P(n)\)</span> be <span class="math inline">\(3^n\)</span> ends in 1, 3, 7, or 9. We will prove by induction that <span class="math inline">\(P(n)\)</span> is true for <span class="math inline">\(n\geq0\)</span>.</p>
+<p><em>Base case, P(0):</em> <span class="math inline">\(3^0 = 1\)</span>, which ends in 1. Therefore, <span class="math inline">\(P(0)\)</span> is true.</p>
+<p><em>Inductive step:</em> Assume <span class="math inline">\(P(n)\)</span> (that <span class="math inline">\(3^n\)</span> ends in 1, 3, 7, or 9). We will show that <span class="math inline">\(P(n+1)\)</span> (that <span class="math inline">\(3^{n+1}\)</span> ends in 1, 3, 7, or 9) follows.</p>
+<p>Consider <span class="math inline">\(3^{n+1} = 3^n (3)\)</span></p>
+<p>By the inductive hypothesis, <span class="math inline">\(3^n\)</span> must end in 1, 3, 7, or 9. As a result, there are 4 possible cases:</p>
+<ol>
+<li><p>The last digit of <span class="math inline">\(3^n\)</span> is 1. Since 1*3 = 3, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 3. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 3. Since 3*3 = 9, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 9. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 7. Since 7*3 = 21, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 1. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+<li><p>the last digit of <span class="math inline">\(3^n\)</span> is 9. Since 9*3 = 27, the last digit of <span class="math inline">\(3^{n+1}\)</span> is 7. <span class="math inline">\(P(n+1)\)</span> holds true.</p></li>
+</ol>
+<p>We can therefore conclude that <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>. Since <span class="math inline">\(P(0)\)</span> is true and <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>, we can conclude that <span class="math inline">\(P(n)\)</span> holds true for <span class="math inline">\(n \geq 0\)</span> and every power of <span class="math inline">\(3\)</span> ends in one of the digits 1, 3 ,7, or 9.</p>
+
+<p>(BONUS). Use induction to prove that for all nonnegative integers <span class="math inline">\(n\)</span>: <span class="math display">\[\sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6}\]</span></p>
+<p>Let <span class="math inline">\(P(n)\)</span> be <span class="math inline">\(\sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6}\)</span>. We will prove by induction that <span class="math inline">\(P(n)\)</span> is true for <span class="math inline">\(n\geq0\)</span>.</p>
+<p><em>Base case, P(0):</em></p>
+<p><span class="math inline">\(\sum_{k=0}^{n}k^{2}=\sum_{k=0}^{0}k^{2}= 0^2 = 0\)</span></p>
+<p><span class="math inline">\(\frac{n(n+1)(2n+1)}{6}=\frac{0(0+1)(2*0+1)}{6}=0\)</span></p>
+<p>Therefore, <span class="math inline">\(P(0)\)</span> is true.</p>
+<p><em>Inductive step:</em> Assume <span class="math inline">\(P(n)\)</span>. We will show that <span class="math inline">\(P(n+1)\)</span> follows.</p>
+<p><span class="math inline">\(\sum_{k=0}^{n+1}k^{2} = \sum_{k=0}^{n}k^{2} + (n+1)^2\)</span></p>
+<p><span class="math inline">\(\sum_{k=0}^{n+1}k^{2} = \frac{n(n+1)(2n+1)}{6} + (n+1)^2\)</span> by the inductive hypothesis</p>
+<p><span class="math inline">\(\sum_{k=0}^{n+1}k^{2} = \frac{1}{6} (n(n+1)(2n+1) + 6(n+1)^2)\)</span></p>
+
+<p><span class="math inline">\(= \frac{1}{6} (n+1)(2n^2+n+6n+6)\)</span></p>
+
+<p><span class="math inline">\(= \frac{1}{6} (n+1)(2n^2+7n+6)\)</span></p>
+
+<p><span class="math inline">\(= \frac{1}{6} (n+1)(2n^2+4n+3n+6)\)</span></p>
+
+<p><span class="math inline">\(= \frac{1}{6} (n+1)(2n(n+2)+3(n+2))\)</span></p>
+
+<p><span class="math inline">\(= \frac{1}{6} (n+1)(2n+3)(n+2)\)</span></p>
+
+<p><span class="math inline">\(= \frac{(n+1)((n+1)+2)(2(n+1)+1)}{6}\)</span></p>
+<p><span class="math inline">\(P(n+1)\)</span> therefore follows from <span class="math inline">\(P(n)\)</span>.</p>
+<p>We can therefore conclude that <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>. Since <span class="math inline">\(P(0)\)</span> is true and <span class="math inline">\(P(n+1)\)</span> follows from <span class="math inline">\(P(n)\)</span>, we can conclude that <span class="math inline">\(P(n)\)</span> holds true for <span class="math inline">\(n \geq 0\)</span> and <span class="math inline">\(\sum_{k=0}^{n}k^{2}=\frac{n(n+1)(2n+1)}{6}\)</span> for all non-negative integers <span class="math inline">\(n\)</span>.</p>
+<h1 id="strong-induction">Strong Induction</h1>
+<h2 id="summary-2">Summary</h2>
+<ul>
+<li><p>In simple terms, strong induction is similar to ordinary induction, except you use <span class="math inline">\(P(0)\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(P(n)\)</span> instead of just <span class="math inline">\(P(n)\)</span> in order to prove <span class="math inline">\(P(n+1)\)</span>.</p></li>
+<li><p>Formally, the difference between ordinary and strong induction is:<br />
+Let <span class="math inline">\(P(x)\)</span> be a predicate and <span class="math inline">\(m,n\)</span> nonnegative integers.</p>
+<ul>
+<li><p>Ordinary Induction: If <span class="math inline">\(P(m)\)</span> is true and <span class="math inline">\(P(n) \Rightarrow P(n+1)\)</span><br />
+for all <span class="math inline">\(n \geq m\)</span>, then <span class="math inline">\(P(n)\)</span> is true for all <span class="math inline">\(n \geq m\)</span>.</p></li>
+<li><p>Strong Induction: If <span class="math inline">\(P(m)\)</span> is true and<br />
+<span class="math inline">\(P(m), P(m+1), \dots, P(n)\)</span> together <span class="math inline">\(\Rightarrow P(n+1)\)</span><br />
+for all <span class="math inline">\(n \geq m\)</span>, then <span class="math inline">\(P(n)\)</span> is true for all <span class="math inline">\(n \geq m\)</span>.</p></li>
+</ul></li>
+<li><p>Strong induction proofs begin with the identification of the proposition to be proven. The next step is to identify and verify the base cases. Note that with strong induction there are often multiple base cases. Next comes the inductive step, where you show that the proposition’s truth for <span class="math inline">\(0\ldots n\)</span> entails its truth for <span class="math inline">\(n+1\)</span>. Be sure to properly identify the proposition being inducted on.</p></li>
+<li><p>Note that sometimes you will need to break your inductive step into multiple cases.</p></li>
+</ul>
+<h2 id="example-problems-1">Example Problems</h2>
+
+<p>Using induction, prove that for all positive integers <span class="math inline">\(n\)</span>: <span class="math display">\[\sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{n}{n+1}\]</span></p>
+<p>Base case: <span class="math inline">\(\sum_{k=1}^{1}\frac{1}{1(1+1)}=\frac{1}{1+1} = \frac{1}{2}\)</span>. Inductive step: Suppose it holds for <span class="math inline">\(n \ge 1\)</span>. <span class="math inline">\(\sum_{k=1}^{n+1}\frac{1}{k(k+1)} = \frac{1}{(n+1)(n+2)} + \sum_{k=1}^{n}\frac{1}{k(k+1)}\)</span>. By the inductive hypothesis, <span class="math inline">\(\sum_{k=1}^{n}\frac{1}{k(k+1)} = \frac{n}{n+1}\)</span>, so the former equation is <span class="math inline">\(\frac{1}{(n+1)(n+2)} + \frac{n}{n+1} = \frac{n^2 + 2n+1}{(n+1)(n+2)} = \frac{(n+1)^2}{(n+1)(n+2)} = \frac{n+1}{n+2}\)</span>.</p>
+
+<p>The game of “Take Away” is played with a pile of 9 coins. Two teams take turns removing coins from the pile. At each turn, the team whose turn it is can choose to remove either one or two coins from the pile. The team that removes the last coin wins.</p>
+<p>Does the game have a winning strategy? Note: for the game to have a winning strategy one of the two teams – either the team that removes coins first or the team that removes coins second – must always be able to win.</p>
+<p>Generalize the game to a pile of any positive integer <span class="math inline">\(n\)</span> coins and show that the game always has a wining strategy (not necessarily for the same team).</p>
+<p>Yes, the second team can always win. The winning strategy for the second team is to “complete to 3”. In other words, if the first team takes 1 coin, take 2 coins; if the first team takes 2 coins, take 1 coin.</p>
+<p><span class="math inline">\(P(n) =\)</span> there exists a winning strategy in Take Away with <span class="math inline">\(n\)</span> coins. We claim <span class="math inline">\(P(n)\)</span> holds for all <span class="math inline">\(n &gt; 0\)</span>. Base cases: for <span class="math inline">\(P(1)\)</span> and <span class="math inline">\(P(2)\)</span>, we have the trivial winning strategies of taking the first 1 or 2 coins. For <span class="math inline">\(P(3)\)</span>, we again have the trivial winning strategy of taking whatever coins remain after the first team plays. Strong inductive step: suppose that <span class="math inline">\(P(1), ..., P(n)\)</span> hold. For <span class="math inline">\(m &gt; 3\)</span>, we know that <span class="math inline">\(P(m-3)\)</span> holds by the inductive hypothesis. In other words, one of the teams can play so that they pick up the fourth to last coin. This team has a winning strategy: play so that they pick up the fourth to last coin, and then pick up the remaining 1 or 2 coins based on the other team’s play. Thus <span class="math inline">\(P(m)\)</span>, and we have finished the proof.</p>
+
+<p>Let <span class="math inline">\(S\)</span> be the sequence <span class="math inline">\(a_1, a_2, a_3, \ldots\)</span> where <span class="math inline">\(a_1 = 1\)</span>, <span class="math inline">\(a_2 = 2\)</span>, <span class="math inline">\(a_3 = 3\)</span>, and <span class="math inline">\(a_n = a_{n-1} + a_{n-2} + a_{n-3}\)</span>. Use strong induction to prove that <span class="math inline">\(a_n &lt; 2^n\)</span> for all <span class="math inline">\(n \geq 4\)</span>.</p>
+<p><span class="math inline">\(P(n) = a_n &lt; 2^n\)</span> for all <span class="math inline">\(n \geq 4\)</span>. Base cases: <span class="math inline">\(P(4), P(5), P(6)\)</span> hold (simply plug in the numbers). Strong inductive step: Suppose that <span class="math inline">\(P(4), ..., (n)\)</span> hold for <span class="math inline">\(n \geq 6\)</span>. Notice that <span class="math inline">\(a_{n+1} = a_n + a_{n-1} + a_{n-2} = (a_{n-1} + a_{n-2} + a_{n-3}) + a_{n-1} + a_{n-2} = 2(a_{n-1}+a_{n-2}) + a_{n-3}\)</span>. We know from the inductive hypothesis that <span class="math inline">\(a_{n-3} &lt; 2^{n-3} &lt; 2^{n-1}\)</span>. We also know <span class="math inline">\(a_{n-1} &lt; 2^{n-1}\)</span> and <span class="math inline">\(a_{n-2} &lt; 2^{n-2}\)</span>. Thus <span class="math inline">\(a_{n+1} =  2(a_{n-1}+a_{n-2}) + a_{n-3} &lt; 2(2^{n-1} + 2^{n-2}) + 2^{n-1} \implies a_{n+1} &lt;2^{n+1}\)</span>.</p>
+
+<p>(BONUS). Prove using strong induction that for all <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math inline">\(n \ge 2\)</span>, <span class="math inline">\(n\)</span> is divisible by a prime. <span><em>(Hint: In this problem, we consider all divisors, not just proper divisors, so a number is considered as being divisible by itself. Split the inductive step into cases based on whether <span class="math inline">\(n+1\)</span> is prime. What does it mean for a number to be composite?)</em></span></p>
+<p><span class="math inline">\(P(n) = n\)</span> is divisible by a prime. Base cases: <span class="math inline">\(P(2)\)</span> is true, since 2 is divisible by itself. Strong inductive step: assume that <span class="math inline">\(P(2)...P(n)\)</span> holds for <span class="math inline">\(n \ge 2\)</span>. If <span class="math inline">\(n+1\)</span> is prime, then it is divisible by itself, and <span class="math inline">\(P(n+1)\)</span> holds. Otherwise <span class="math inline">\(n+1\)</span> is composite, so there exists <span class="math inline">\(m, k &lt; n+1\)</span> such that <span class="math inline">\(mk = n+1\)</span>. By the inductive hypothesis, <span class="math inline">\(P(m)\)</span> (and <span class="math inline">\(P(k)\)</span>). So a prime divides <span class="math inline">\(m\)</span>, and <span class="math inline">\(m\)</span> divides <span class="math inline">\(n+1\)</span>, so that same prime divides <span class="math inline">\(n+1\)</span>, and <span class="math inline">\(P(n+1)\)</span> holds.</p>
+<p>Consider the sequence <span class="math inline">\(a_1= 2, a_2= 5, a_3= 13, \cdots , a_{n} = 5a_{n-1} - 6 a_{n-2}\)</span>. Prove by strong induction that <span class="math inline">\(a_n = 2^{n-1} + 3^{n-1}\)</span> for all <span class="math inline">\(n &gt; 2\)</span>.</p>
+<p><span class="math inline">\(P(n) = a_n = 2^{n-1} + 3^{n-1}\)</span> for all <span class="math inline">\(n &gt; 2\)</span>. Base cases: <span class="math inline">\(P(3), P(4),\)</span> hold; simply plug in the numbers. Strong inductive step: suppose <span class="math inline">\(P(3), ..., P(n)\)</span> hold for <span class="math inline">\(n \ge 4\)</span>. Then for <span class="math inline">\(P(n+1)\)</span>, note that <span class="math inline">\(a_{n+1} = 5a_{n} - 6 a_{n-1} = 5(2^{n-1} + 3^{n-1}) - 6(2^{n-2} + 3^{n-2}) = 5(2^{n-1}) + 5(3^{n-1}) - 3(2^{n-1}) - 2(3^{n-1}) = 2^n + 3^n\)</span>.</p>
+
+<p>Let <span class="math inline">\(a_1=1\)</span> and for every <span class="math inline">\(k \geq 1\)</span>, <span class="math inline">\(a_{k+1}=3a_k+1\)</span>. Prove that for every <span class="math inline">\(k \geq1\)</span>, <span class="math inline">\(a_k\)</span> is odd or even depending on whether <span class="math inline">\(k\)</span> is odd or even, respectively. You may assume that the product of an even number and another number is even, and the product of two odd numbers is odd.</p>
+<p>Let <span class="math inline">\(P(n)\)</span> be the predicate that <span class="math inline">\(a_n\)</span> is odd if and only if <span class="math inline">\(n\)</span> is odd. Base case: <span class="math inline">\(P(1)\)</span> holds, since <span class="math inline">\(1 = a_1\)</span> are both odd. Inductive hypothesis: suppose that <span class="math inline">\(P(n)\)</span> holds for <span class="math inline">\(n \ge 1\)</span>. Case 1: <span class="math inline">\(n\)</span> is even. Then <span class="math inline">\(n+1\)</span> is odd, and <span class="math inline">\(a_{n+1} = 3a_n + 1\)</span>. By the inductive hypothesis, <span class="math inline">\(a_n\)</span> must be even. An even number times an even number is always even, so <span class="math inline">\(3a_n\)</span> is even. An even number <span class="math inline">\(+1\)</span> is odd, so <span class="math inline">\(a_{n+1}\)</span> is odd. Case 2: <span class="math inline">\(n\)</span> is odd. By the inductive hypothesis, <span class="math inline">\(a_n\)</span> must be odd. An odd number times an odd number is odd, so <span class="math inline">\(3a_n\)</span> is odd. An odd number <span class="math inline">\(+1\)</span> is even, so <span class="math inline">\(a_{n+1}\)</span> is even.</p>
+<h1 id="propositional-logic">Propositional Logic</h1>
+<h2 id="summary-3">Summary</h2>
+<ol>
+<li><p>A proposition is a statement that is either <em>True</em> or <em>False</em>. For brevity, we label propositions with letters (<span class="math inline">\(p\)</span> : “Gold is a metal”). In this case we can also say that <em>p</em> is a propositional (Boolean) variable.</p></li>
+<li><p>Logical operators combine propositions into <em>compound</em> propositions . List of the most common logical operators:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\land\)</span></td>
+<td style="text-align: left;">AND (Conjunction)</td>
+<td style="text-align: left;"><span class="math inline">\(p \land q\)</span> is true when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\lor\)</span></td>
+<td style="text-align: left;">OR (Disjunction)</td>
+<td style="text-align: left;"><span class="math inline">\(p \lor q\)</span> is true when at least one of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> is true.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\neg\)</span></td>
+<td style="text-align: left;">Negation</td>
+<td style="text-align: left;">Another symbol is the horizontal bar: <span class="math inline">\(\neg(p \land q) \equiv \overline{p \land q}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\oplus\)</span></td>
+<td style="text-align: left;">Exclusive OR.</td>
+<td style="text-align: left;">Like OR but it’s false when both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are true.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\to\)</span></td>
+<td style="text-align: left;">Implication</td>
+<td style="text-align: left;">Important equivalence: <span class="math inline">\(p\to q \equiv \neg p \lor q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\leftrightarrow\)</span></td>
+<td style="text-align: left;">IFF</td>
+<td style="text-align: left;">Important equivalence: <span class="math inline">\(p \leftrightarrow q \equiv (p \to q) \land (q \to p)\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<h2 id="example-problems-2">Example Problems</h2>
+
+<p>Prove by truth table the first of the two distributive laws:</p>
+<p><span class="math inline">\(p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)\)</span></p>
+
+<p><span id="my-label" label="my-label">[my-label]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p \lor (q \land r)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((p \lor q) \land (p \lor r)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(A = \neg p \lor q\)</span> and <span class="math inline">\(B = p \oplus \neg q\)</span>. Show by writing out the two truth tables that these two formulas are not equivalent.</p>
+
+<p><span id="my-label" label="my-label">[my-label]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\neg p \lor q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p \oplus \neg q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Using the propositions p=“I study”, q=“I will pass the course”, r=“The professor accepts bribes”, translate the following into statements of propositional logic:</p>
+<ol>
+<li><p>If I do not study, then I will not pass the course unless the professor accepts bribes.</p></li>
+<li><p>If the professor accepts bribes, then I will pass the course regardless of whether or not I study.</p></li>
+<li><p>The professor does not accept bribes, but I study and will pass the course.</p></li>
+</ol>
+<p>Using the propositions p=“The night hunting is successful”, q=“The moon is full”, r=“The sky is cloudless”, translate the following into statements of propositional logic:</p>
+<ol>
+<li><p>For successful night hunting it is necessary that the moon is full and the sky is cloudless.</p></li>
+<li><p>The sky being cloudy is both necessary and sufficient for the night hunting to be successful.</p></li>
+<li><p>If the sky is cloudy, then the night hunting will not be successful unless the moon is full.</p></li>
+</ol>
+
+<ol>
+<li><p><span class="math inline">\((\neg p \land q) \to r\)</span></p></li>
+<li><p><span class="math inline">\(r \implies q\)</span></p></li>
+<li><p><span class="math inline">\(\neg r \land p \land q\)</span></p></li>
+</ol>
+
+<ol>
+<li><p><span class="math inline">\(p \to (q \land r)\)</span></p></li>
+<li><p><span class="math inline">\(\neg r \leftrightarrow q\)</span></p></li>
+<li><p><span class="math inline">\((\neg r \land p) \to q\)</span></p></li>
+</ol>
+<p>In the mini-lecture you saw how to add two boolean variables using logic operators. In this problem we will show how to subtract two boolean variables.<br />
+Consider the boolean variables <span class="math inline">\(a, b, c\)</span> each representing a single bit. Write two propositional formulas: one for the result of the boolean subtraction <span class="math inline">\(a-b\)</span>, and another for the the “borrow bit&quot; <span class="math inline">\(c\)</span>, indicating whether a bit must be borrowed from an imaginary bit to the left of <span class="math inline">\(a\)</span> (the case when a=0 and b=1) to ensure that the result of the subtraction is always positive. Start by creating a “truth” table for <span class="math inline">\(a-b\)</span> and the borrow bit <span class="math inline">\(c\)</span>. The borrow bit <span class="math inline">\(c\)</span> is always 1 initially, and is set to 0 only if borrowing was necessary.</p>
+
+<p><span id="my-label" label="my-label">[my-label]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a-b\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(c\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+<p>So: <span class="math inline">\(a-b = a \oplus b\)</span> and <span class="math inline">\(c = \neg a \land b\)</span>.</p>
+<p>Using a truth table, find which of the following compound propositions are always true, regardless of the values of p and q:</p>
+<ol>
+<li><p><span class="math inline">\(p \rightarrow (p \lor q)\)</span></p></li>
+<li><p><span class="math inline">\(\lnot (p \rightarrow (p \lor q))\)</span></p></li>
+<li><p><span class="math inline">\(p \rightarrow (p \rightarrow q)\)</span></p></li>
+</ol>
+<ol>
+<li><p>Always true</p></li>
+<li><p>Always false</p></li>
+<li><p>Not true for <span class="math inline">\(p = 1, q = 0\)</span></p></li>
+</ol>
+<h1 id="equivalences-and-normal-forms">Equivalences and Normal Forms</h1>
+<h2 id="summary-4">Summary</h2>
+<ol>
+<li><p>Forms of propositional formulas</p>
+<ul>
+<li><p>Disjunctive normal form: <span class="smallcaps">Or</span>s of <span class="smallcaps">And</span>-terms, where each <span class="smallcaps">And</span>-term consists of variables (or negations of variables), e.g. <span class="math inline">\((p \land q) \lor (p \land r) \lor (q \land \lnot r \land t)\)</span>, or <span class="math inline">\((p \land q \land  r) \lor (\lnot p \land q \land r)\lor (\lnot p \land \lnot q \land r)\)</span>.</p></li>
+<li><p>Conjunctive normal form: <span class="smallcaps">And</span>s of <span class="smallcaps">Or</span>-terms, where each <span class="smallcaps">Or</span>-term consists of variables (or negations of variables), e.g. <span class="math inline">\((p \lor \lnot q) \land (p \lor r) \land (q \lor \lnot r \lor t)\)</span>, or <span class="math inline">\((p \lor q \lor r) \land (p \lor \lnot q \lor r) \land (\lnot p \lor q \lor r)\)</span>.</p></li>
+</ul></li>
+<li><p>De Morgan’s Laws and Double Negation:</p>
+<ul>
+<li><p><span class="math inline">\(\lnot (A \land B) \longleftrightarrow \lnot A \lor \lnot B\)</span></p></li>
+<li><p><span class="math inline">\(\lnot (A \lor B) \longleftrightarrow \lnot A \land \lnot B\)</span></p></li>
+<li><p><span class="math inline">\(\lnot (\lnot A) \longleftrightarrow A\)</span></p></li>
+</ul></li>
+<li><p>Associative Laws</p>
+<ul>
+<li><p><span class="math inline">\((A \land B) \land C \longleftrightarrow A \land (B \land C) \longleftrightarrow A \land B \land C\)</span></p></li>
+<li><p><span class="math inline">\((A \lor B) \lor C \longleftrightarrow A \lor (B \lor C) \longleftrightarrow A \lor B \lor C\)</span></p></li>
+</ul></li>
+<li><p>Distributive Laws</p>
+<ul>
+<li><p><span class="math inline">\(A \land (B \lor C) \longleftrightarrow (A \land B) \lor (A \land C)\)</span></p></li>
+<li><p><span class="math inline">\(A \lor (B \land C) \longleftrightarrow (A \lor B) \land (A \lor C)\)</span></p></li>
+</ul></li>
+<li><p>Tautologies and Satisfiability</p>
+<ul>
+<li><p>Tautology: Formula that is true under all possible truth assignments.</p></li>
+<li><p>Satisfiable: Formula that is true for at least one truth assignment.</p></li>
+<li><p>Unsatisfiable: Formula whose negation is a tautology.</p></li>
+</ul></li>
+</ol>
+<h2 id="example-problems-3">Example Problems</h2>
+
+<p>Explain why <span class="math inline">\(A \rightarrow B \equiv \lnot A \lor B\)</span> (Hint: use truth tables in your answer).</p>
+<p>The following formula is satisfiable. <em>Without using a truth table</em>, find a satisfying assignment, and explain your method: <span class="math display">\[(((p \lor q \lor r) \land (\neg r \land s)) \lor \neg p) \rightarrow ((\neg s \lor t) \oplus \neg q)\]</span></p>
+
+<p>First, let’s consider the truth table for <span class="math inline">\(A \rightarrow B\)</span>. If <span class="math inline">\(A\)</span> is true, then <span class="math inline">\(B\)</span> must also be true. If <span class="math inline">\(A\)</span> isn’t true, then we do not require that <span class="math inline">\(B\)</span> be either true or false.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A \rightarrow B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Next, let’s write out the truth table for <span class="math inline">\(\lnot A \lor B\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\lnot A \lor B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Since the truth tables are identical, we can conclude that the two expressions are equivalent.</p>
+<p>Rewrite the formula as <span class="math inline">\(A \rightarrow B \equiv \lnot A \lor B\)</span>, by the equivalence in Problem 1. If we set <span class="math inline">\(p\)</span> to 1 and <span class="math inline">\(s\)</span> to 0, then <span class="math inline">\(A\)</span> will evaluate to 0 and we have found a satisfying assignment. We can then populate the other variables with whatever values we wish. The following assignment is satisfying: <span class="math inline">\(p = 1\)</span>, <span class="math inline">\(q = 0\)</span>, <span class="math inline">\(r = 0\)</span>, <span class="math inline">\(s = 0\)</span>, <span class="math inline">\(t = 0\)</span>.</p>
+
+<p>Put the following formula in conjunctive normal form: <span class="math inline">\((\lnot (p \oplus q)) \rightarrow r\)</span>. Put the following formula in disjunctive normal form: <span class="math inline">\(p \lor (q \rightarrow p)\)</span></p>
+
+<p>Find an easy way to check whether a formula in disjunctive normal form is satisfiable. (BONUS) Sam wakes up one night thinking that he has solved the P=?NP question: P = NP! Given a logical formula, just put the formula into disjuntive normal form, then use the method in part (a) to check to see if it is satisfiable. Why won’t Sam win the million dollar prize for settling the question?</p>
+<p>A DNF formula is satisfiable if and only if at least one of its terms is satisfiable, and a term is satisfiable if and only if it does not contain both <span class="math inline">\(p\)</span> and <span class="math inline">\(\lnot p\)</span> for some variable <span class="math inline">\(p\)</span>. This can be checked in polynomial time. It can take exponential time to convert a formula to disjunctive normal form.</p>
+
+<p>Determine which of the following are equivalent to <span class="math inline">\((p \land q) \rightarrow r\)</span> and which are equivalent to <span class="math inline">\((p \lor q) \rightarrow r\)</span>:</p>
+<p><span class="math inline">\(p \rightarrow (q \rightarrow r)\)</span> <span class="math inline">\(q \rightarrow (p \rightarrow r)\)</span> <span class="math inline">\((p \rightarrow r) \land (q \rightarrow r)\)</span> <span class="math inline">\((p \rightarrow r) \lor (q \rightarrow r)\)</span></p>
+<p>Equivalent to <span class="math inline">\((p \land q) \rightarrow r\)</span> Equivalent to <span class="math inline">\((p \land q) \rightarrow r\)</span> Equivalent to <span class="math inline">\((p \lor q) \rightarrow r\)</span> Equivalent to <span class="math inline">\((p \land q) \rightarrow r\)</span></p>
+<h1 id="logic-and-computers">Logic and Computers</h1>
+<h2 id="summary-5">Summary</h2>
+<ol>
+<li><p>Logic gates. The logic gate is a physical device performing a logic operation. List of common logic gates:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Gate</th>
+<th style="text-align: left;">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="smallcaps">And</span></td>
+<td style="text-align: left;"><span class="math inline">\(a \land b\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="smallcaps">Or</span></td>
+<td style="text-align: left;"><span class="math inline">\(a \lor b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="smallcaps">Not</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lnot a\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="smallcaps">Nand</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lnot(a \land b)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="smallcaps">Nor</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lnot(a \lor b)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="smallcaps">Xor</span></td>
+<td style="text-align: left;"><span class="math inline">\(a \oplus b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="smallcaps">Xnor</span></td>
+<td style="text-align: left;"><span class="math inline">\(\lnot (a \oplus b)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The gates <span class="smallcaps">Nand</span> and <span class="smallcaps">Nor</span> are special because they are functionally complete: each one of them is capable of representing all possible propositional formulas. This means that every logic circuit can be built using only NAND gates or using only<span class="smallcaps">Nor</span> gates.</p></li>
+<li><p>Binary Arithmetic. There is a close relationship between arithmetic operations (addition, subtraction,...) and logic operations (<span class="smallcaps">And</span>,<span class="smallcaps">Or</span>, ...) when the numbers being manipulated are represented in binary. Computers perform arithmetic using logic circuits that are essentially physical implementations of propositional formulas.</p></li>
+</ol>
+<h2 id="example-problems-4">Example Problems</h2>
+
+<p>Perform the following operations in binary, check your answers by performing the same operations in decimal: <span class="math inline">\(11011_2 + 11010_2\)</span> <span class="math inline">\(1110_2 - 1011_2\)</span></p>
+<p><span class="math inline">\(110101_2 = 53\)</span> <span class="math inline">\(11_2 = 3\)</span></p>
+
+<p>A light bulb is connected to three light switches so that:</p>
+<ul>
+<li><p>When all of the switches are off, the light bulb is not lit.</p></li>
+<li><p>When any switch is flipped from on to off or vice versa, the light bulb goes out if it was lit or lights up if it was off.</p></li>
+</ul>
+<p>Construct a circuit that could connect the three switches to the bulb in this way.</p>
+<p>The bulb should only light when an odd number of switches are activated. Suppose our three inputs are labeled A, B and C. We can construct a circuit as follows: feed A and B into an <span class="smallcaps">Xor</span> gate, and feed the output from that gate into an <span class="smallcaps">Xor</span> gate with C. The output from that gate should be connected to the light switch.</p>
+
+<p>The Orcish elevator in Middle-earth is a peculiar machine: it can move up only during the day, and move down — only during the night. In addition, it cannot move up if it’s cold, and it cannot move down if it’s hot. Define p and q:</p>
+<ol>
+<li><p>p: It is day.</p></li>
+<li><p>q: It is cold.</p></li>
+</ol>
+<p>Write a proposition that evaluates to True if the elevator can move (in either direction). Design but do not draw a logic circuit that implements the proposition in (a) with as few gates as possible from this list: <span class="smallcaps">Not</span>, <span class="smallcaps">Or</span>, <span class="smallcaps">And</span>, <span class="smallcaps">Nor</span>, <span class="smallcaps">Nand</span>, <span class="smallcaps">Xor</span>, <span class="smallcaps">Xnor</span>. Can you do it with a single gate?</p>
+
+<p>The elevator can move <em>up</em> if <span class="math inline">\(p \land \lnot q\)</span> evaluates to true.<br />
+The elevator can move <em>down</em> if <span class="math inline">\(\lnot p \land q\)</span> evaluates to true.<br />
+Thus, the elevator can move in either direction if <span class="math inline">\((p \land \lnot q) \lor (\lnot p \land q)\)</span> is true.</p>
+<p>Since <span class="math inline">\((p \land \lnot q) \lor (\lnot p \land q) \equiv p \oplus q\)</span>, a single <span class="smallcaps">Xor</span> gate will suffice.</p>
+
+<p>Construct the following gates: An <span class="smallcaps">And</span> gate, using only <span class="smallcaps">Not</span> and <span class="smallcaps">Or</span> gates An <span class="smallcaps">Xnor</span> gate, using only <span class="smallcaps">And</span>, <span class="smallcaps">Not</span> and <span class="smallcaps">Or</span> gates. An <span class="smallcaps">Xnor</span> gate, using only <span class="smallcaps">Not</span> and <span class="smallcaps">Or</span> gates.</p>
+<p><span class="math inline">\(A \land B \equiv \lnot (\lnot A \lor \lnot B)\)</span> using De Morgan’s Laws. <span class="smallcaps">Xnor</span> is the logical complement of <span class="smallcaps">Xor</span>. Thus <span class="math inline">\(\lnot (A \oplus B) \equiv \lnot((A \lor B) \land \lnot (A \land B)) \equiv \lnot (A \lor B) \lor (A \land B)\)</span> using De Morgan’s Laws. Continuing with the equivalences above, we have <span class="math inline">\(\lnot (A \lor B) \lor (A \land B) \equiv \lnot (A \lor B) \lor \lnot (\lnot (A \land B)) \equiv \lnot (A \lor B) \lor \lnot (\lnot A \lor \lnot B)\)</span></p>
+</body>
+</html>

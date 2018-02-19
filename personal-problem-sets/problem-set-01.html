@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Mathematical Foundations of Statistical Software" />
+  <meta name="author" content="MATH E-156: Stirling Waite" />
+  <title>Problem Set 1</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Problem Set 1</h1>
+<p class="author">Mathematical Foundations of Statistical Software</p>
+<p class="author">MATH E-156: Stirling Waite</p>
+<p class="date">Due January 29, 2018</p>
+</header>
+
+<h1 id="problem-1" class="unnumbered unnumbered">Problem 1</h1>
+<p>Let’s start out by doing some simple numerical calculations.</p>
+<h2 id="problem-statement" class="unnumbered unnumbered">Problem Statement</h2>
+<p> What is the value of <span class="math inline">\(\Gamma(9)\)</span>?</p>
+
+<p> What is the value of <span class="math inline">\(\Gamma(5.5)\)</span>?</p>
+
+<p> What is the value of <span class="math inline">\(\displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}\)</span>?</p>
+
+<p> Obtain an expression in terms of a gamma function divided by a constant for the integral <span class="math display">\[\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt\]</span> Once you’ve expressed this in terms of a gamma function divided by a constant, use software (e.g. Excel or R) to obtain the numerical value. (Hint: read the section on “kinda sorta” gamma functions.)</p>
+
+<h2 id="problem-solution" class="unnumbered unnumbered">Problem Solution</h2>
+<p> What is the value of <span class="math inline">\(\Gamma(9)\)</span>?</p>
+
+<p><span class="math display">\[\Gamma(X) = \int_0^\infty t^{x-1} \ e^{-t} \cdot dt\]</span> <span class="math display">\[\Gamma(9) = 8!\]</span> <span class="math display">\[= 8X7X6X5X4X3X2X1\]</span> <span class="math display">\[= 40320\]</span></p>
+
+<p> What is the value of <span class="math inline">\(\Gamma(5.5)\)</span>?</p>
+
+<p><span class="math display">\[\Gamma(5.5) = \int_0^\infty t^{4.5} \ e^{-t} \cdot dt\]</span> <span class="math display">\[= 4.5 X \int_0^\infty t^{3.5} \ e^{-t} \cdot dt\]</span> <span class="math display">\[= 4.5 X 3.5 X \int_0^\infty t^{2.5} \ e^{-t} \cdot dt\]</span> <span class="math display">\[= 4.5 X 3.5 X 2.5 X \int_0^\infty t^{1.5} \ e^{-t} \cdot dt\]</span> <span class="math display">\[= 4.5 X 3.5 X 2.5 X 1.5 \int_0^\infty t^{0.5} \ e^{-t} \cdot dt\]</span> <span class="math display">\[= 4.5 X 3.5 X 2.5 X 1.5 X 0.5 X \sqrt{\pi}\]</span></p>
+<p><span class="math display">\[\Gamma(5.5) = 52.34278\]</span></p>
+
+<h3 id="problem-1-continued" class="unnumbered unnumbered">Problem 1, continued</h3>
+<p> What is the value of <span class="math inline">\(\displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}\)</span>?</p>
+
+<p><span class="math display">\[= \displaystyle \frac{ \Gamma(8) }{\Gamma(5)} \cdot \frac{\Gamma(7.1)}{\Gamma(10.1)}\]</span></p>
+<p><span class="math display">\[= \frac{6.1! \cdot 7!}{4! \cdot 9.1!}\]</span></p>
+<p><span class="math display">\[= \frac{6.1! \cdot 7!}{4! \cdot 9.1!}\]</span></p>
+<p><span class="math display">\[= 0.4127\]</span></p>
+
+<p> Obtain an expression in terms of a gamma function divided by a constant for the integral <span class="math display">\[\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt\]</span> Once you’ve expressed this in terms of a gamma function divided by a constant, use software (e.g. Excel or R) to obtain the numerical value. (Hint: read the section on “kinda sorta” gamma functions.)</p>
+<p><span class="math display">\[\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt\]</span> <span class="math display">\[s = 2.7t\]</span> <span class="math display">\[t = \frac{s}{2.7}\]</span> <span class="math display">\[dt = \frac{ds}{2.7}\]</span> <span class="math display">\[\int_0^\infty t^{3.6} \ e^{-2.7t} \cdot dt = (\frac{s}{2.7})^{3.6} e^{-s} \frac{ds}{2.7}\]</span> <span class="math display">\[= \frac{1}{2.7^{4.6}} \int_0^\infty s^{3.6} e^{-s} \cdot ds\]</span> <span class="math display">\[= \frac{\Gamma(4.6)}{2.7^{4.6}}\]</span> <span class="math display">\[= 0.1387473\]</span></p>
+
+<h1 id="problem-2" class="unnumbered unnumbered">Problem 2</h1>
+<h2 id="problem-statement-1" class="unnumbered unnumbered">Problem Statement</h2>
+<p>Using the recurrence relation, we can actually define the gamma function for negative numbers, as long as they are not integers (i.e. whole numbers). Calculate the value of <span class="math inline">\(\Gamma(-5/2)\)</span>.</p>
+<h2 id="problem-solution-1" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[\Gamma(-2.5) = \int_0^\infty t^{-1.5} e^{-t} \cdot dt\]</span> <span class="math display">\[= -1.5 \cdot \int_0^\infty t^{-0.5} e^{-t} \cdot dt\]</span> <span class="math display">\[= -1.5 \cdot -0.5 \cdot \sqrt{\pi}\]</span> <span class="math display">\[= -0.9453087\]</span></p>
+
+<h1 id="problem-3" class="unnumbered unnumbered">Problem 3</h1>
+<h2 id="problem-statement-2" class="unnumbered unnumbered">Problem Statement</h2>
+<p><span><strong>Part (a)</strong></span> The binomial coefficient is defined for non-negative integers <span class="math inline">\(r\)</span> and <span class="math inline">\(k\)</span> with <span class="math inline">\(r \geq k\)</span> as <span class="math display">\[{r \choose k} = \frac{r!}{k! \cdot (r - k)!}\]</span> Use the gamma function to define a generalized form of the binomial coefficient, where <span class="math inline">\(r\)</span> is still non-negative but is not necessarily an integer. Your generalized form should return the same answer as before when <span class="math inline">\(r\)</span> is an integer. Note that <span class="math inline">\(k\)</span> is still restricted to integer values.</p>
+
+<p> What is the value of <span class="math inline">\(\displaystyle { 8.5 \choose 4}\)</span>?</p>
+<h2 id="problem-solution-2" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span><strong>Part (a)</strong></span> The binomial coefficient is defined for non-negative integers <span class="math inline">\(r\)</span> and <span class="math inline">\(k\)</span> with <span class="math inline">\(r \geq k\)</span> as <span class="math display">\[{r \choose k} = \frac{r!}{k! \cdot (r - k)!}\]</span> Use the gamma function to define a generalized form of the binomial coefficient, where <span class="math inline">\(r\)</span> is still non-negative but is not necessarily an integer. Your generalized form should return the same answer as before when <span class="math inline">\(r\)</span> is an integer. Note that <span class="math inline">\(k\)</span> is still restricted to integer values.</p>
+
+<p><span class="math display">\[{r \choose k} = \frac{r!}{k! \cdot (r - k)!}\]</span> <span class="math display">\[= \frac{\Gamma (r+1)}{k! \cdot \Gamma (r - k + 1)}\]</span></p>
+
+<h3 id="problem-3-continued" class="unnumbered unnumbered">Problem 3, continued</h3>
+
+<p> What is the value of <span class="math inline">\(\displaystyle { 8.5 \choose 4}\)</span>?</p>
+<p><span class="math display">\[= { 8.5 \choose 4}\]</span> <span class="math display">\[= \frac{8.5!}{4! \cdot (8.5 - 4)!}\]</span> <span class="math display">\[= \frac{8.5!}{4! \cdot 4.5!}\]</span> <span class="math display">\[= \frac{119292.5 }{ 1256.227 }\]</span> <span class="math display">\[= 94.96094\]</span></p>
+
+<h1 id="problem-4" class="unnumbered unnumbered">Problem 4</h1>
+<h2 id="problem-statement-3" class="unnumbered unnumbered">Problem Statement</h2>
+<p>Calculate the value of <span class="math inline">\(\Gamma(4)\)</span> directly from the definition i.e. evaluate the integral <span class="math display">\[\Gamma(4)\ =\ \int_0^\infty t^3\ e^{-t} \cdot dt\]</span> You’ll have to use integration by parts for this. You can use the fact that <span class="math display">\[\int_0^\infty t^2 e^{-t} \cdot dt = 2\]</span> With this fact, you’ll only need to do one integration by parts.</p>
+<h2 id="problem-solution-3" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[\Gamma (4) = \int_0^\infty t^3 e^{-t} \cdot dt\]</span> <span class="math display">\[= 3 \cdot \int_0^\infty t^2 e^{-t} \cdot dt\]</span> <span class="math display">\[= 3 \cdot 2\]</span> <span class="math display">\[= 6\]</span></p>
+
+<h1 id="problem-5" class="unnumbered unnumbered">Problem 5</h1>
+<h2 id="problem-statement-4" class="unnumbered unnumbered">Problem Statement</h2>
+<p>Evaluate the integral <span class="math display">\[\int_0^\infty t^5\ e^{-3t} \cdot dt\]</span> This is a “kinda sorta” gamma function, discussed in Section 2.6 of Lecture 1. For this problem, don’t use the formula in Section 2.6, but actually make a substitution and evaluate the integral. You can use the example in Section 2.6 as a template.</p>
+<h2 id="problem-solution-4" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[\int_0^\infty t^5\ e^{-3t} \cdot dt\]</span> <span class="math display">\[s = 3t\]</span> <span class="math display">\[t = \frac{s}{3}\]</span> <span class="math display">\[dt = \frac{ds}{3}\]</span> <span class="math display">\[\int_0^\infty t^5\ e^{-3t} \cdot dt =  \int_0^\infty (\frac{s}{3})^5 \ e^{-s} \ \cdot (\frac{ds}{3})\]</span> <span class="math display">\[= \frac{1}{3^6} \ X \ \int_0^\infty s^5  \ e^{-s} \ \cdot ds\]</span> <span class="math display">\[= \frac{\Gamma (6)}{3^6}\]</span> <span class="math display">\[= 0.1646091\]</span></p>
+
+<h1 id="problem-6" class="unnumbered unnumbered">Problem 6</h1>
+<h2 id="problem-statement-5" class="unnumbered unnumbered">Problem Statement</h2>
+<p>Derive the algebraic expression for the “kinda sorta” gamma function: <span class="math display">\[\int_0^\infty t^x e^{-qt} \cdot dt = \frac{\Gamma(x+1)}{q^{x+1}},\ \ q &gt; 0\]</span></p>
+<h2 id="problem-solution-5" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[= \int_0^\infty \ t^x \ e^{-qt} \ \cdot \ dt\]</span> <span class="math display">\[s = qt\]</span> <span class="math display">\[t = \frac{s}{x}\]</span> <span class="math display">\[dt = \frac{ds}{x}\]</span> <span class="math display">\[= \int_0^\infty \ t^x \ e^{-qt} \ \cdot \ dt = \int_0^\infty (\frac{s}{x})^x \ e^{-s} \ \cdot \ \frac{ds}{x}\]</span> <span class="math display">\[= \int_0^\infty \ \frac{s^x}{q^{x+1}} \ e^{-s} \ \cdot \ dt\]</span> <span class="math display">\[= \frac{s^x}{q^{x+1}} \ \int_0^\infty \ s^{(x+1) - 1} \ e^{-s} \ \cdot \ ds\]</span> <span class="math display">\[= \frac{\Gamma(x+1)}{q^{x+1}}\]</span></p>
+
+<h1 id="problem-7" class="unnumbered unnumbered">Problem 7</h1>
+<h2 id="problem-statement-6" class="unnumbered unnumbered">Problem Statement</h2>
+<p>Evaluate the integral <span class="math display">\[\int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx\]</span> To do this, you should first note that the integrand here is symmetric about <span class="math inline">\(0\)</span>, so we have: <span class="math display">\[\int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx = 2 \cdot \int_0^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx\]</span> Similarly, the Gaussian integral has the same symmetry property: <span class="math display">\[\int_{-\infty}^\infty \exp \left \{ - x^2 \right \} \cdot dx = 2 \cdot \int_0^\infty \exp \left \{ - x^2 \right \} \cdot dx\]</span> By making a clever substitution, you should be able to convert our original integral into a problem involving a Gaussian integral, and then you can evaluate this using the result from lecture.</p>
+
+<p>DO NOT attempt to solve this by constructing a double integral and converting to polar coordinates.</p>
+<h2 id="problem-solution-6" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[s^2 = \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2}\]</span> <span class="math display">\[s = \frac{x}{\sqrt{2\sigma}}\]</span> <span class="math display">\[x = \sqrt{2 \sigma s}\]</span> <span class="math display">\[dx = \sqrt{2 \sigma ds}\]</span></p>
+<p>Upper End:</p>
+<p><span class="math display">\[\underset{x \to \infty}{\lim s} = \underset{x \to \infty}{\lim} \ \frac{x}{\sqrt{2\sigma}}\]</span> <span class="math display">\[= \infty\]</span></p>
+<p>Lower End:</p>
+<p>When x is 0, then S is also 0.</p>
+<p><span class="math display">\[\int_{-\infty}^\infty \exp \left \{ - \frac{1}{2}  \cdot  \frac{x^2}{\sigma^2} \right \} \cdot dx  = \int_0^\infty \exp \{ -s^2 \} \ \cdot \ \sqrt{2 \sigma ds}\]</span> <span class="math display">\[= \sqrt{2 \sigma} \ \cdot \ \int_0^\infty \ \exp \{ -s^2 \} \ \cdot \ ds\]</span> <span class="math display">\[= \sqrt{2 \sigma} \ X \ ( \frac{1}{2} \int_\infty^\infty \exp \{ -s^2 \} \cdot ds )\]</span> <span class="math display">\[= \frac{\sqrt{2\pi\sigma}}{2}\]</span></p>
+<p>Original Integral:</p>
+<p><span class="math display">\[\int_{-\infty}^{+\infty} \exp \{ - \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2} \} \ \cdot \ dx
+\ = \
+2 \ \cdot \ \int_0^\infty \ \exp \{ - \frac{1}{2} \ \cdot \ \frac{x^2}{\sigma^2} \} \ \cdot \ dx\]</span> <span class="math display">\[= 2 \ \cdot \ \frac{\sqrt{2\pi\sigma}}{2}\]</span> <span class="math display">\[= \sqrt{2\pi\sigma}\]</span></p>
+
+<h1 id="problem-8" class="unnumbered unnumbered">Problem 8</h1>
+<h2 id="problem-statement-7" class="unnumbered unnumbered">Problem Statement</h2>
+<p>In lecture, we saw the Gaussian integral: <span class="math display">\[\int_{-\infty}^\infty e^{-s^2} \cdot ds = \sqrt{\pi}\]</span> Use this to derive the result <span class="math display">\[\Gamma \left ( \frac{1}{2} \right ) = \sqrt{\pi}\]</span> Hint: the integral goes from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(+\infty\)</span>, but the Gamma function is defined by an integral from <span class="math inline">\(0\)</span> to <span class="math inline">\(+\infty\)</span>. So the first step is to obtain a new integral that has the appropriate range of integration. You actually can do this with a conceptual argument; no algebra manipulation required. Then it’s just a matter of doing the right substitution to put the integral into the form of a gamma function.</p>
+<h2 id="problem-solution-7" class="unnumbered unnumbered">Problem Solution</h2>
+<p><span class="math display">\[\int_{-\infty}^\infty e^{-s^2} \cdot ds = \sqrt{\pi}\]</span> <span class="math display">\[f(s) = e^{-s^2}\]</span> <span class="math display">\[\int_{0}^{+\infty}  e^{-s^2} \cdot ds = \frac{1}{2} \int_{-\infty}^{+\infty} e^{-s^2} \cdot ds\]</span> <span class="math display">\[= \frac{\sqrt{\pi}}{2}\]</span></p>
+<p>If <span class="math inline">\(f(-s) = f(s)\)</span> for all <span class="math inline">\(s\)</span>, then <span class="math inline">\(f(s)\)</span> is an even function.</p>
+<p><span class="math display">\[\int_{0}^{+a} f(s) \ \cdot \ ds = \frac{1}{2} \int_{-a}^{+a} f(s) \ \cdot \ ds\]</span></p>
+<p>For second problem we have the result:</p>
+<p><span class="math display">\[\int_{0}^{+\infty} f(s) \ e^{-s^2} \ \cdot \ ds = \frac{\sqrt{\pi}}{2}\]</span></p>
+
+<h3 id="problem-8-continued" class="unnumbered unnumbered">Problem 8, continued</h3>
+<p>Making the substitution for <span class="math inline">\(t = s^2\)</span>:</p>
+<p><span class="math display">\[t = s^2\]</span> <span class="math display">\[s = t^{\frac{1}{2}}\]</span> <span class="math display">\[ds = \frac{1}{2} t^{-\frac{1}{2}} \ \cdot \ dt\]</span></p>
+<p>When <span class="math inline">\(s = 0\)</span>, then <span class="math inline">\(t = 0\)</span>. When <span class="math inline">\(s = \infty\)</span>, then <span class="math inline">\(t = \infty\)</span>. The limits of integration don’t change.</p>
+<p>So: <span class="math display">\[\int_{0}^{\infty}  e^{-s^2} \cdot ds = \int_{0}^{\infty} e^{-t} \ \cdot \ \frac{1}{2} \ t^{-\frac{1}{2}} \ \cdot \ dt\]</span> <span class="math display">\[= \frac{1}{2} \ \int_{0}^{+\infty} \ t^{-\frac{1}{2}} \ e^{-t} \ \cdot \ dt\]</span> <span class="math display">\[= \frac{1}{2} \ \Gamma \ (\frac{1}{2})\]</span></p>
+<p>Remember before:</p>
+<p><span class="math display">\[\int_{0}^{\infty}  e^{-s^2} \cdot ds  =  \frac{\sqrt{\pi}}{2}\]</span></p>
+<p>So now we can say:</p>
+<p><span class="math display">\[\frac{1}{2} \ \Gamma \ (\frac{1}{2}) =  \frac{\sqrt{\pi}}{2}\]</span></p>
+<p>Finally:</p>
+<p><span class="math display">\[\Gamma \ (\frac{1}{2}) = \sqrt{\pi}\]</span></p>
+</body>
+</html>

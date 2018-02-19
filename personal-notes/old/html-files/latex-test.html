@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> -->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stirling Waite</title>
+		<!-- Bootstrap 4 CSS -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" async
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+	</head>
+	<body>
+		<!-- HTML5 Nav Element -->
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="../index.html">HOME</a>
+				<button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					Menu
+					<i class="fa fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="#a">A</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="#d">D</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="blog.html">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="glossary.html">Glossary</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="about.html">About</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Glossary -->
+		<div id="glossary" class="intro-text">
+			<div class="container-fluid">
+				<div class="row">
+						<div class="col-10">
+							<h1>Machine Learning Glossary</h1>
+							<hr/>
+							<h2 class="glossary" id="a">A</h2>
+
+							<h3>A/B testing</h3>
+							<p>
+                                When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                                $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+								A statistical way of comparing two (or more) techniques, typically an incumbent against a new rival. A/B testing aims to determine not only which technique performs better but also to understand whether the difference is statistically significant. A/B testing usually considers only two techniques using one measurement, but it can be applied to any finite number of techniques and measures.
+							</p>
+							<h3>activation function</h3>
+							<p>
+								A function (for example, ReLU or sigmoid) that takes in the weighted sum of all of the inputs from the previous layer and then generates and passes an output value (typically nonlinear) to the next layer.
+							</p>
+							<hr/>
+							<h2 class="glossary" id="b">B</h2>
+							<h3>backpropagation</h3>
+							<p>
+							The primary algorithm for performing gradient descent on neural networks. First, the output values of each node are calculated (and cached) in a forward pass. Then, the partial derivative of the error with respect to each parameter is calculated in a backward pass through the graph.
+							</p>
+							<hr/>
+							<h2 class="glossary" id="c">C</h2>
+							<h3>candidate sampling</h3>
+							<p>
+								A training-time optimization in which a probability is calculated for all the positive labels, using, for example, softmax, but only for a random sample of negative labels. For example, if we have an example labeled beagle and dog candidate sampling computes the predicted probabilities and corresponding loss terms for the beagle and dog class outputs in addition to a random subset of the remaining classes (cat, lollipop, fence). The idea is that the negative classes can learn from less frequent negative reinforcement as long as positive classes always get proper positive reinforcement, and this is indeed observed empirically. The motivation for candidate sampling is a computational efficiency win from not computing predictions for all negatives.
+							</p>
+							<h3>categorical data</h3>
+							<p>
+								Features having a discrete set of possible values. For example, consider a categorical feature named house style, which has a discrete set of three possible values: Tudor, ranch, colonial. By representing house style as categorical data, the model can learn the separate impacts of Tudor, ranch, and colonial on house price.
+								Sometimes, values in the discrete set are mutually exclusive, and only one value can be applied to a given example. For example, a car maker categorical feature would probably permit only a single value (Toyota) per example. Other times, more than one value may be applicable. A single car could be painted more than one different color, so a car color categorical feature would likely permit a single example to have multiple values (for example, red and white).
+								Categorical features are sometimes called discrete features.
+								Contrast with numerical data.
+							</p>
+							<h3>class-imbalanced data set</h3>
+							<p>
+								A binary classification problem in which the labels for the two classes have significantly different frequencies. For example, a disease data set in which 0.0001 of examples have positive labels and 0.9999 have negative labels is a class-imbalanced problem, but a football game predictor in which 0.51 of examples label one team winning and 0.49 label the other team winning is not a class-imbalanced problem.
+							</p>
+							<h2 class="glossary" id="d">D</h2>
+							<h3>candidate sampling</h3>
+							<p>
+								A training-time optimization in which a probability is calculated for all the positive labels, using, for example, softmax, but only for a random sample of negative labels. For example, if we have an example labeled beagle and dog candidate sampling computes the predicted probabilities and corresponding loss terms for the beagle and dog class outputs in addition to a random subset of the remaining classes (cat, lollipop, fence). The idea is that the negative classes can learn from less frequent negative reinforcement as long as positive classes always get proper positive reinforcement, and this is indeed observed empirically. The motivation for candidate sampling is a computational efficiency win from not computing predictions for all negatives.
+							</p>
+							<h3>categorical data</h3>
+							<p>
+								Features having a discrete set of possible values. For example, consider a categorical feature named house style, which has a discrete set of three possible values: Tudor, ranch, colonial. By representing house style as categorical data, the model can learn the separate impacts of Tudor, ranch, and colonial on house price.
+								Sometimes, values in the discrete set are mutually exclusive, and only one value can be applied to a given example. For example, a car maker categorical feature would probably permit only a single value (Toyota) per example. Other times, more than one value may be applicable. A single car could be painted more than one different color, so a car color categorical feature would likely permit a single example to have multiple values (for example, red and white).
+								Categorical features are sometimes called discrete features.
+								Contrast with numerical data.
+							</p>
+							<h3>class-imbalanced data set</h3>
+							<p>
+								A binary classification problem in which the labels for the two classes have significantly different frequencies. For example, a disease data set in which 0.0001 of examples have positive labels and 0.9999 have negative labels is a class-imbalanced problem, but a football game predictor in which 0.51 of examples label one team winning and 0.49 label the other team winning is not a class-imbalanced problem.
+							</p>
+						</div>
+						<div class="col-2">
+							Contents
+							<ul>
+								<li><a href="#a"><span>A</span></a></li>
+								<li><a href="#b"><span>B</span></a></li>
+								<li><a href="#c"><span>C</span></a></li>
+								<li><a href="#d"><span>D</span></a></li>
+								<li><a href="#e"><span>E</span></a></li>
+								<li><a href="#f"><span>F</span></a></li>
+								<li><a href="#g"><span>G</span></a></li>
+								<li><a href="#h"><span>H</span></a></li>
+								<li><a href="#i"><span>I</span></a></li>
+								<li><a href="#j"><span>J</span></a></li>
+								<li><a href="#k"><span>K</span></a></li>
+								<li><a href="#l"><span>L</span></a></li>
+								<li><a href="#m"><span>M</span></a></li>
+								<li><a href="#n"><span>N</span></a></li>
+								<li><a href="#o"><span>O</span></a></li>
+								<li><a href="#p"><span>P</span></a></li>
+								<li><a href="#q"><span>Q</span></a></li>
+								<li><a href="#r"><span>R</span></a></li>
+								<li><a href="#s"><span>S</span></a></li>
+								<li><a href="#t"><span>T</span></a></li>
+								<li><a href="#u"><span>U</span></a></li>
+								<li><a href="#v"><span>V</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Popper JavaScript -->
+		<script src="../js/popper.min.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../js/jquery-3.2.1.slim.min.js"></script>
+		<!-- Bootstrap 4 JavaScript -->
+		<script src="../js/bootstrap.min.js"></script>
+	</body>
+</html>
