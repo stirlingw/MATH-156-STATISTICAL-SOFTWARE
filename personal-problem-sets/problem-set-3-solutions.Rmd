@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Problem Set 3
+### MATH - E - 156
+### Harvard University
+
+- https://saylordotorg.github.io/text_introductory-statistics/s09-03-probability-computations-for-g.html#fwk-shafer-ch05_s03_f03
+- https://www4.stat.ncsu.edu/~bmasmith/NewST370WEB/rlab/lab6.html
+- https://www4.stat.ncsu.edu/~bmasmith/NewST370WEB/rlab/lab6.html
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+# 1(A) 
+Let W be a binomial random variable with $n = 17$ and $p = 0.65$. What is the probability Pr( 9 <= W < 13)? (Hint: be careful about those inequalities!)
+
+```{r}
+
+sum(dbinom(9:13, 17, 0.65))
+```
+
+# 1(B) 
+Let $X$ be  a  general normal  random  variable with $\mu=6.8$ and $\sigma^2=4.2$.  What is the value of the density function $f_X(5.7)$?
+```{r}
+
+pnorm(5.7, 6.8, 4.2)
+```
+
+# 1(C)
+Let $Y$ be a chi-square random variable with 5 degrees of freedom. What is the survival probability $S_Y(8.6)$?
+```{r}
+dchisq(Y,df=4)
+```
+
+# 1(D)
+Let $Z$ be a standard normal random variable. What is the 75th percentile, $Q_Z(0.75)$?
+
+```{r}
+
+```
+
+

@@ -1,0 +1,71 @@
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core, caskroom/cask).
+==> New Formulae
+kube-ps1
+==> Updated Formulae
+apm-server
+armadillo
+artifactory
+caddy
+camlp5
+cask
+cassandra
+collector-sidecar
+dfmt
+dmd
+duply
+elasticsearch
+elasticsearch@5.6
+filebeat
+fio
+flatcc
+fn
+freetds
+gopass
+hadolint
+hashcat
+haskell-stack
+hatari
+heartbeat
+joplin
+kibana
+kibana@5.6
+libtiff
+libupnp
+lnav
+logstash
+meson
+metricbeat
+nginx
+nuget
+numpy
+packetbeat
+percona-server
+pilosa
+pinentry
+pipenv
+pjproject
+presto
+pybind11
+rkhunter
+ruby
+ruby@1.8
+ruby@2.0
+ruby@2.2
+ruby@2.3
+siril
+sjk
+sleuthkit
+snakemake
+storm
+strongswan
+stubby
+swiftformat
+tippecanoe
+unison
+wtf
+zabbix
+
+==> Searching for a previously deleted formula (in the last month)...
+==> Searching for similarly named formulae...
+==> Searching taps...
